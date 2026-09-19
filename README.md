@@ -1,6 +1,6 @@
 # rag-notes-qa
 
-A Retrieval-Augmented Generation (RAG) system that answers questions over my own handwritten study notes (AWS/cloud topics — EC2, EBS, storage, etc.), built as a hands-on project while transitioning toward GenAI Engineering.
+A Retrieval-Augmented Generation (RAG) system that answers questions over my own handwritten study notes (SpringSecurity/ML and DL Basics/AWS/cloud topics — EC2, EBS, storage, etc.), built as a hands-on project while transitioning toward GenAI Engineering.
 
 ## What this does
 
