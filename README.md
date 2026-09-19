@@ -1,5 +1,22 @@
 # rag-notes-qa
 
+🔴 Live
+
+Deployed on Railway: https://rag-notes-qa-production-65e2.up.railway.app
+
+POST /query — ask a question, get a grounded answer with sources
+GET /health — service health check
+GET /metrics — basic request/latency/error metrics
+
+Example:
+
+bash
+curl -X POST https://rag-notes-qa-production-65e2.up.railway.app/query -H "Content-Type: application/json" -d "{\"question\": \"What is AWS EBS and what are its use cases?\", \"k\": 3}"
+What this does
+
+Takes photographed handwritten notes, transcribes them, and turns them into a queryable Q&A system: ask a question, get an answer grounded in the actual notes — with the source chunk cited, and an explicit "I don't know" when the answer isn't in the notes rather than a hallucinated guess.
+
+
 A Retrieval-Augmented Generation (RAG) system that answers questions over my own handwritten study notes (SpringSecurity/ML and DL Basics/AWS/cloud topics — EC2, EBS, storage, etc.), built as a hands-on project while transitioning toward GenAI Engineering.
 
 ## What this does
