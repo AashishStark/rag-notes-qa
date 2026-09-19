@@ -1,0 +1,61 @@
+# =============================================================================
+# Docker Compose: Handwritten Notes RAG API
+# =============================================================================
+#
+# ARCHITECTURAL NOTE: Why ChromaDB is mounted as a volume (NOT baked in image)
+# -----------------------------------------------------------------------------
+# 1. Container Immutability vs Statefulness:
+#    Docker images are designed to be stateless, disposable, and immutable.
+#    Vector stores and SQLite index files are stateful data that change when
+#    new documents are added or updated. Baking data into the image means any
+#    runtime indexing changes are lost when the container stops or is recreated.
+#
+# 2. Decoupling Code Deployment from Data Lifecycle:
+#    If you update api.py, prompt engineering, or dependencies, you rebuild the
+#    image. Because ChromaDB is stored in an external volume, the new container
+#    immediately attaches to the existing indexed vectors without having to
+#    re-embed all study notes on every code deployment.
+#
+# 3. Lean Image Size & Faster CI/CD Builds:
+#    Vector indexes and binary embeddings can grow significantly. Keeping them
+#    out of the Docker image keeps the image slim, saves bandwidth, and speeds
+#    up container registry push/pull operations.
+#
+# 4. Independent Data Backup & Persistence:
+#    Volumes survive container restarts, stops, and removals (`docker rm`).
+#    They can be independently backed up, snapshot-managed, or shared.
+# =============================================================================
+
+
+services:
+  rag-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rag_notes_api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+
+    # Load API keys from local .env file
+    env_file:
+      - .env
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - GOOGLE_API_KEY=None
+
+    # Named volume for vector database persistence across container restarts
+    # (Alternatively, you can use host bind mount: "./data/chroma_db:/app/data/chroma_db")
+    volumes:
+      - chroma_data:/app/data/chroma_db
+
+    # Resource limits (good practice for local or production deployment)
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+
+volumes:
+  # Managed named volume for persistent ChromaDB storage
+  chroma_data:
+    name: rag_notes_chroma_volume

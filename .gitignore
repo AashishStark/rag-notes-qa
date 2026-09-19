@@ -1,14 +1,17 @@
-# Environment variables and API keys
+# Environment variables and credentials
 .env
 .env.*
 !.env.example
 
-# Python caches and bytecode
+# Python cache and bytecode
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
+build/
+dist/
+*.egg-info/
 
 # Virtual environments
 venv/
@@ -16,19 +19,25 @@ venv/
 env/
 ENV/
 
-# Local Vector DB and cache
+# Local Vector Databases & Model Caches
 data/chroma_db/
 .cache/
+~/.cache/
 
-# Execution logs and temporary outputs
+# Test & evaluation generated outputs
+data/eval_results.json
+
+# Execution logs and output dumps
 *.log
 output_*.txt
 output_transcribe_notes.txt
 
-# Editor and IDE configurations
+# Editor and IDE settings
 .vscode/
 .idea/
+*.swp
+*.swo
 
-# OS-generated files
+# OS files
 .DS_Store
 Thumbs.db
