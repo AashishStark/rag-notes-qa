@@ -36,18 +36,23 @@ Answer generation (Gemini, context-grounded)
 
 ```
 rag-notes-qa/
+├── Dataset/
+│   └── My Studies/          # source handwritten note photos (raw input)
 ├── data/
-│   ├── raw_images/          # source handwritten note photos
+│   ├── chroma_db/           # persisted ChromaDB vector store
 │   ├── transcribed_text/    # OCR output, one .txt per image
 │   ├── chunks.json          # chunked text + metadata
-│   └── eval_set.json        # question/answer pairs for manual evaluation
-├── src/
-│   ├── preprocess.py        # image → transcribed text
-│   ├── chunk.py              # text → overlapping chunks
-│   ├── build_index.py        # chunks → embeddings → ChromaDB
-│   ├── rag.py                 # retrieve() + generate_answer()
-│   └── evaluate.py            # runs eval_set.json through the pipeline
+│   ├── eval_set.json        # question/answer pairs for evaluation
+│   └── eval_results.json    # generated answers vs. expected, from evaluate_rag.py
+├── transcribe_notes.py      # image → transcribed text
+├── chunk_notes.py           # text → overlapping chunks
+├── rag_pipeline.py          # RAGPipeline: index, retrieve(), generate_answer(), CLI
+├── generate_eval_set.py     # builds eval_set.json
+├── evaluate_rag.py          # runs eval_set.json through the pipeline → eval_results.json
+├── output_transcribe_notes.txt  # log/output from the transcription run
 ├── requirements.txt
+├── .env                     # GEMINI_API_KEY / GOOGLE_API_KEY (not committed)
+├── .gitignore
 └── README.md
 ```
 
