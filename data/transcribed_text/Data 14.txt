@@ -1,0 +1,71 @@
+# Problem of overfitting:
+
+* **Underfit:**
+  - For the given data, it has higher error.
+  - High bias.
+  - (Diagram label: straight line graph)
+
+* **Just Right:**
+  - Fits well.
+  - Generalization.
+  - $w_1x + w_2x^2 + b$
+  - (Diagram label: slightly curved line graph fitting points)
+
+* **Overfit:**
+  - Fits perfectly, but for new data predicts poorly.
+  - High variance.
+  - $w_1x_1 + w_2x_2^2 + \dots$
+  - (Diagram label: wiggly line oscillating through points)
+
+## Addressing Overfitting:
+
+1. Collect more training data.
+2. Reduce features (reduce polynomial degree).
+3. Regularization.
+
+**Regularization:**
+- Take the concept of "Reduce features". But, instead of fully removing the features, we can reduce the weight of that feature. To come down impact on the graphs.
+- (Equation example):
+  $$f(x) = 1.3x + 0.13x^2 + 0.013x^3 + 0.0001x^4$$
+  (Points to equation) $\rightarrow$ reduces loss.
+- Cost function with $\lambda$:
+  $$J = \min \frac{1}{m} \sum_{i=1}^{m} (f_{\vec{w},b}(\vec{x}^{(i)}) - y^{(i)})^2 + \frac{\lambda}{m} \sum_{j=1}^{n} w_j^2$$
+  - $\lambda \rightarrow$ large no.
+  - Decreasely the weight of $w_1, w_2, \dots w_n$
+
+- **$\lambda$ needs a chosen carefully:**
+  - If $\lambda = 0 \rightarrow$ no way to overfit.
+  - If $\lambda$ too small $\rightarrow$ overfit.
+  - If $\lambda$ too large $\rightarrow$ underfit.
+  - $\lambda = 10^{10}$
+
+---
+
+# Decision Tree:
+
+- (Diagram of a decision tree):
+  - Root: Statement 1
+    - Left branch: T
+      - Stat 2
+        - T $\rightarrow$ o/p 1
+        - F $\rightarrow$ Stat 3
+          - T $\rightarrow$ o/p 2
+          - F $\rightarrow$ o/p 3
+    - Right branch: F
+      - o/p 4
+  - If % < entropy + Gini $\rightarrow$ % no $\rightarrow$ Regression
+  - If % = entropy + Gini $\rightarrow$ % no $\rightarrow$ Classification Tree
+
+* **Loss $\rightarrow$ Entropy/Impurity**
+
+---
+
+# Random Forest:
+- Multiple DT to increase accuracy.
+- Dataset $\rightarrow$ Bootstrapping Datasets
+  - 1. Train share same data $\rightarrow$ [unclear]
+  - 2. Train subsets only the features need! (Challenge of 1)
+  - (Brace enclosing points 1 & 2) $\rightarrow$ Randomly select.
+
+- We can do it in no. of trees.
+- For new data pass it to enter in tree and see which class wins majority.

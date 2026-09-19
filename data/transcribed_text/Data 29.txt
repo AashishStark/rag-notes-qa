@@ -1,0 +1,52 @@
+9. AWS Audit Manager
+- Fully managed, automated...
+- Reducine manual effort for teams often audit...
+- Asses your policies.
+- Manage evidence.
+- Against audit-ready reports.
+- generates predictable frameworks.
+
+10.7) AWS Organizations
+- Managing multiple AWS accounts
+- Manage billing, access, compliance.
+- security via rules or shares per accounts.
+- Org -> OU -> Account
+- for many OU, we can configure central policy.
+- SCP (service control policy)
+  - within SCP, no, actions cannot be performed.
+
+10.8) Governance
+- 1. AWS Control Tower - govern, manage, any-aws
+- * Governance :- framework to manage your IT goals with policies, procedures, standards to ensure adherence.
+- Provides initial summary of
+  - Account/your account
+  - Guardrails
+  - Compliance status
+
+- 1. Account Factory - templated architecture that establishes
+- 2. controls - Rules that promote governance
+- 3. monitoring - Reports for compliance.
+
+10.9) AWS Resource Groups
+- Create, share, & manage from a set of [unclear]
+- AWS Resource Groups.
+
+10.10) AWS Health Dashboard
+- Provides status resources for service & warnings.
+- Timely & actionable guidance to security [unclear].
+
+10.11) AWS Trust Advisor
+- cost optimization
+- performance
+- security
+- fault tolerance
+- service limits
+
+11. IAM Access Analyzer
+- identifies in net, un-config, unsafe permissions.
+- identifying external access security problems match your security standards.
+
+11.2) PRICING & SUPPORT
+- 1. Pay as you go
+- 2. Save when you commit ( 1 or 3 yr - dual [unclear] )
+- 3. Pay less by using more (Volume-based discounts)

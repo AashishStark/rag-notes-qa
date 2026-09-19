@@ -1,0 +1,73 @@
+# Summary of Security Group & NACL
+
+- **Security Group**
+  - Stateful - The return traffic is automatically allowed.
+  - 10/4 rules - (Deny all inbound by default + Allow all outbound).
+  - Rules allow - (Inbound & Outbound).
+  - Evaluated all rules before deciding to allow or deny traffic.
+- **NACL**
+  - Stateless - Return traffic is allowed manually.
+  - VPC
+
+---
+
+- **5.1) DEMO**
+  - User
+  - Internet
+  - AWS Cloud
+  - Region: `10.0.0.0/24` VPC
+    - Internet Gateway (IGW)
+    - AZ 1 (`10.0.0.0/16`)
+      - Pub. Subnet (`10.0.0.0/24`)
+      - Prv. Subnet (`10.0.10.0/24`)
+    - AZ 2 (`10.0.0.0/16`)
+      - Pub. Subnet (`10.0.1.0/24`)
+      - Prv. Subnet (`10.0.11.0/24`)
+  - Route Tables
+    - Subnets (`Subnet 1`, `Subnet 2`)
+    - Route Tables (`RT 1`, `RT 2`)
+    - NACL / SG associated with each
+
+---
+
+- **1)** `Frame -> VPC -> Create VPC`
+  - `VPC only`
+  - Name
+  - IPv4 CIDR block
+
+- **2)** `AZ1/AZ2`
+  - VPC Dashboard -> Create Subnet -> Select VPC -> Data -> Assign IP settings -> Subnet settings
+    - VPC
+    - AZ [any]
+    - IPv4 CIDR block
+    - Actions
+    - `public`
+    - `private` (Unselect auto assign IP for private).
+
+---
+
+- **VPC**
+  - `Subnet` -> `Create Internet Gateway` -> attach to VPC
+  - `IGW`
+
+- **4)** `Create Route Tables` -> `associate public subnets`
+  - VPC -> Create Route Tables -> Edit Route -> Add Route
+    - Destination: `0.0.0.0/0`
+    - Target: `IGW -> IGW ID`
+  - Subnet association -> Edit subnet -> select public subnets
+
+---
+
+- **5.2)** `dynamic Routing/BGP`
+  - `BGP`
+  - can route to diff endpoints using manual/auto routing policies
+  - Routing policies
+    - latency-based routing
+    - geolocation
+    - DNS
+    - weighted / Round Robin
+  - Amazon CloudFront - Edge location (CDN).
+  - drop general accelerator
+    - improved availability
+    - performance
+    - security

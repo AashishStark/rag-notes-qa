@@ -1,0 +1,57 @@
+# AWS
+
+## 1.5 : cloud native systems infra :-
+- **High availability**
+  - accessible with near downtime. Even on DC your system returns with separates ups and resilient.
+- **Fault Tolerance**
+  - designing a system to continue to operate even if unresilient components fail.
+  - function, resilience with very large so that no one single failures bring down the entire system.
+  - protects only was operation in regions on diff zones
+    - e.g.: power, telco, etc.
+
+---
+
+region
+AZA (Availability Zone)
+for redundancy
+
+- There are more AZs in region for redundancy
+- these AZs will be distant (distance if any natural disaster happens in present)
+- Things that are redundant are:
+  - w/o any connectivity
+- Every app/srv must serve multiple regions.
+
+---
+
+## ii. Multi Port services :-
+
+```yaml
+spec:
+  selector:
+    app: myapp-dc
+  ports:
+    - name: http
+      port: 27017
+      targetPort: 27017
+    - name: ws-mp
+      port: 9212
+      targetPort: 9212
+```
+
+2 ports
+
+## Headless Service
+- Need to communicate with specific pod directly. (What is needed? IP address)
+- Use: Stateful apps.
+
+- `spec`:
+  - `clusterIP: None`
+
+- Then, it returns to pod IP address.
+
+## NodePort Service
+
+NodePort Source
+- Node IP -> port & (name -> k 3s) ->
+- Load B -> oct (Node Port)
+- Node -> oct (ClusterIP)

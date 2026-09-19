@@ -1,0 +1,46 @@
+Cost Effective
+
+- Storage classes
+- Designed for diff storage needs
+- Multiple storage classes, single product
+- S3 Standard
+  - For frequent access + affordables storage
+  - Fast retrieval speed + 3 availability zones
+  - Lower storage costs
+- S3 Standard - Infrequent Access (Standard - IA)
+  - Quickly accessible most frequently
+  - Medical images/media files
+- S3 Intelligent-Tiering
+  - Fewer uses
+  - Past access time no read
+  - Moving from mind to less
+- S3 Glacier Deep Archive
+  - Most cost effective
+  - Monthly monthly reed
+  - Compliance mode / digital preservation
+  - Retrieval within 12 hrs.
+
+- More
+- One Zone:
+  - S3 Glacier Instant
+  - S3 Archive - IA
+- Amazon S3 lifecycle policies
+  - You can configure the at start must people can then over the period of time it run [unclear] down.
+  - S3 storage class pricing
+  - Move your data from [unclear] -> glacier standard on use
+
+- S3 Outposts
+  - Amazon [unclear] storage in your [unclear] suy outposts
+  - using AWS s3 API's & [unclear]
+
+- 6.6) S3 Demo
+  - Home -> S3 -> create bucket + select creation + create folder create bucket bucket
+  - File Upload & Created
+  - Bucket
+  - Upload
+    - properties
+    - Metadata
+    - Sys-defined
+    - Un-defined
+  - (Prop & Bucket) (Unit VI)
+  - create bucket -> Properties -> Permission -> Block public access -> Bucket policy - JSON -> Need to write policy -> [unclear]

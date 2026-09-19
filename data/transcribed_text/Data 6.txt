@@ -1,0 +1,59 @@
+Parameters $\to W, b$
+Hyperparameters $\to$
+- learning rate $\alpha$
+- \# iterations
+- \# hidden layers $L$
+- \# hidden units
+- choice of activation function
+
+Bias / Variance :
+- High Variance can be identified when training set error is way less than dev set error.
+- Overfitting $\implies$
+  Train $E = 1\%$
+  Dev $E = 11\%$
+  $\left.\begin{array}{l}\vphantom{a}\end{array}\right\} \to \text{High Variance}$
+- If training data covers itself danger, then the model is underfits.
+- Underfitting $\implies$
+  Train $E = 15\%$
+  Dev $E = 16\%$
+  $\left.\begin{array}{l}\vphantom{a}\end{array}\right\} \to \text{High Bias}$
+- If Train $E$ is higher than the Bus Error is also higher (complexity), then it's down to $\text{Bi} \cdot \beta_1$
+- Both $H/B \implies$
+  Train $E = 15\%$
+  Dev $E = 30\%$
+  $\left.\begin{array}{l}\vphantom{a}\end{array}\right\} \to \text{High V}$
+  $\beta_1$
+There is value will be
+compare against optimal Bayesian Error to conclude whether its actually $H/B$.
+Generally $\to$ Try $\& \text{ rot}$.
+- If $E$ is higher than it can model sun can also be.
+  (Train $E$) If humans book better try $\alpha$ and rate with $1\%$.
+
+High Bias $\to$
+$\downarrow V$
+High Variance $\to$
+$\downarrow V$
+$\begin{array}{c}
+\text{Bigger } W/b \\
+\uparrow \\
+\text{Train Danger} \\
+\uparrow \\
+\text{More Data} \\
+\downarrow \\
+\text{Regularization}
+\end{array}$
+
+Regularization :
+
+already used loss :
+$J(W,b) = \frac{1}{m} \sum_{i=1}^{m} L(\hat{y}^{(i)}, y^{(i)})$
+
+with $Ry$ :
+$l_2 \text{ Reg} : ||W||_2^2 = \sum_{j=1}^{n_x} w_j^2 = w^T w$
+$\lambda \to \text{Reg} \cdot \text{parameter}$
+
+$J(W^{(1)}, b^{(1)} ...) = \frac{1}{m} \sum_{i=1}^{m} L(\hat{y}^{(i)}, y^{(i)}) + \frac{\lambda}{2m} \sum_{l=1}^{L} ||W^{[l]}||_F^2$
+
+$||W^{[l]}||_F^2 = \sum_{i=1}^{n^{[l]}} \sum_{j=1}^{n^{[l-1]}} (W_{ij}^{[l]})^2$
+
+$\to \text{Frobenius Norm}$

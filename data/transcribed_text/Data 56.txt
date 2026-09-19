@@ -1,0 +1,66 @@
+Bias correction:
+
+$$v_t = \beta v_{t-1} + (1-\beta)v^t$$
+$$v_t = 0$$
+$$v_1 = 0.98(v_0) + (0.02)(v_1)$$
+$$o/p \Leftarrow v_1 = 0.02(v_1)$$
+If $\theta_1 = v_1$, $v_1$ = very low.
+It will not have a good start.
+
+$$\frac{v_t}{1-\beta^t} \Rightarrow \text{Biais correction}$$
+$$t=1: 1-\beta^t = (1-(0.98)^1) = 0.0396$$
+$0.01960, +0.02\text{ }v_2$
+
+$= 0.0396$
+which will have relatively good start
+
+$H$
+[Diagram: Parabola curve with arrows]
+$\text{Faster}$
+$\text{Predicted}$
+
+$\Rightarrow$
+
+[Diagram: Parabola curve starting flatter at origin]
+$\text{Corrected}$
+$\text{Bias}$
+$\text{Parabolat curve}$
+
+SGD with momentum:
+
+On start $t$:
+Compute $dw, db$ on current mini-batch
+$$v_{dw} = \beta v_{dw} + (1-\beta) dw$$
+$$v_{db} = \beta v_{db} + (1-\beta) db$$
+$$w = w - \alpha v_{dw} \quad;\quad b = b - \alpha v_{db}$$
+$\beta = 0.9$ has good value (composed of other values)
+
+RMSprop can also speed up $gd$:
+
+On start $t$:
+Compute $dw, db$ on mini-batch
+
+$$S_{dw} = \beta S_{dw} + (1-\beta) {dw}^2 \quad \text{— small}$$
+$$S_{db} = \beta S_{db} + (1-\beta) {db}^2 \quad \text{— larger}$$
+$$w = w - \alpha \frac{dw}{\sqrt{S_{dw} + \varepsilon}} \quad;\quad b = b - \alpha \frac{db}{\sqrt{S_{db} + \varepsilon}}$$
+
+[Diagram: Contour plot of loss function with oscillating path versus smooth path]
+Labels:
+- $\leftarrow \text{Pasd without RMSprop}$
+- $\text{Next to move} \leftrightarrow$
+- $\leftarrow \text{Movement}$
+- $\varepsilon$ is added just for numerical stability, just if value eq $0$, to avoid that.
+
+Adapted
+Moment
+Estimation
+$\Big(\text{Adam Opt. Algorithm}\Big)$
+
+$\text{Idea of adam} = \text{Momentum} + \text{RMSprop}$
+$$w = w - \alpha \frac{v_{dw}}{\sqrt{S_{dw} + \varepsilon}}$$
+
+Hyperparametric choices:
+$\alpha \Leftarrow$ needs to tune
+$\beta_1 \Leftarrow 0.9$ $(dw) \Leftarrow$ momentum
+$\beta_2 \Leftarrow 0.999$ $(dw^2) \Leftarrow$ RMSprop's
+$\varepsilon \Leftarrow 10^{-8}$

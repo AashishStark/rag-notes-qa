@@ -1,0 +1,63 @@
+9. manager for
+One comprehensive service
+automate & off monitoring
+bottleneck gaps of insights.
+9.6.) Additional Security Resources
+AWS Marketplace: Security res
+Threat detection & prevention tools
+Identity & access Mgmt tools
+Data protection tools
+Compliance & governance tools
+
+10. MONITORING, COMPLIANCE & GOVERNANCE
+10.1.) INTRO
+① Secure
+② Monitor
+③ Conduct
+④ Compliance
+
+10.2) MONITORING
+Discovery systems, collecting metrics & using data
+to make decisions.
+- metric resulting notifications - where abnormal thres
+  can trigger.
+- alerting notifications - when abnormal things happen
+  like resulting notifications - alarm / critical notification.
+
+10.3) CLOUDWATCH
+- Collects all metrics from central location
+- Cloudwatch ➜ monitor log file + metrics sent on AWS
+  [Metrics : Variables sent to your resource]
+- Cloudwatch alarm
+  Alarm is triggered after threshold reached.
+- Cloudwatch Dashboard
+  all metrics visualize one place.
+
+10.4) AWS CLOUDTRAIL
+- collecting, storing, monitoring & analysis log II
+  activity log files from AWS acc
+- Continually logged & analyzed - All users
+  It logs every req made from AWS.
+  to validate log file integrity to shows
+  evidence of integrity.
+  System for name of services
+  logs : 94 vars, 50
+- Cloud Trail Event: captures actions
+- CloudTrail Insights: Detect anomalous patterns
+
+10.5) COMPLIANCE
+- GDPR - General Data Protection Regulation
+  Eg EU - compliance
+- HIPAA - Health Insurance Portability & Accountability
+  Sec
+- AWS Artifact Agreements & Reports
+  compliance reports done by third parties.
+- AWS Compliance Center
+- 10.6) Audit AWS For Compliance
+  - AWS Config - Internal Policies + Regulation
+    Monitor - records any resource change &
+    evaluates them against new config you want to
+    implement (Eg),
+    writes custom rules
+    generate template reports - validate comp, robust
+    not.

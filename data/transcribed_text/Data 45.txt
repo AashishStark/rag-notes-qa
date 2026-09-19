@@ -1,0 +1,45 @@
+Original Transformer Architecture:
+
+Comprises of 2 blocks:
+- Encoder (left) $\rightarrow$ Understands $i/p$ from $em/o/p$ along with context from $i/p$.
+- Decoder (right) $\rightarrow$ o/p-only, targets $\rightarrow$ target seq.
+
+This can operate in independent modes:
+1. Encoder-Only: sentence-classification, Named Entity Recog.
+2. Decoder-Only: for generation, Generative Text.
+3. Seq-to-seq: Resp. Input and generative o/p.
+  - Translation
+  - Summarization
+
+Attention Layers:
+It tells the model that in the sentence where you need to pay more attention & were not.
+
+$$\text{Attention } 1$$
+$i/p$
+  $\downarrow$
+  $\uparrow$
+  $Att^n 1 \rightarrow$ This takes $i/p$ from decoder this $\rightarrow$ This is masked-self attention.
+  $\downarrow$
+  $o/p \rightarrow$ What I have/generated always.
+  $\downarrow$
+  shifted right
+
+$\downarrow$
+$\text{o/p prob } \rightarrow \begin{cases} \text{What part of sent} \\ \text{I like look yourself} \end{cases}$
+
+$$\text{Attention } 2$$
+$i/p$
+$\downarrow$
+$Att^n 2 \rightarrow$ Plus takes $i/p$ from
+
+Encoder - Representation $\rightarrow \text{Dec } \rightarrow \text{Proj } \rightarrow q \rightarrow \text{cross-attention} \leftarrow K,V \rightarrow \text{Encoder}$
+
+Transformer encoder/decoder tasks:
+
+Two approaches:
+1. Masked Language Modeling: Used by encoder models, like BERT.
+  It randomly masks some $i/p$ and tries to predict original letters.
+  (Refers to claim bidirectional context (looks at words both $B/A$ masked word)).
+
+2. Causal Language Modeling: Used by decoder, models like GPT.
+  Predicts the next token based on all previous tokens in seq.

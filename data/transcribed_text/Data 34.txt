@@ -1,0 +1,45 @@
+* `x_1, x_2 ...` $\rightarrow$ `x_(i,a)`
+* $\downarrow$
+* $\sigma^2 \rightarrow 0 \to y$
+* Which should be normalized?
+* $z_1$ or $z_2$ ? $\longleftarrow$ Delimiter there
+* $z_1 \leftrightarrow$ accepted by none.
+* $\mu = \frac{1}{m} \sum z^{(i)}$
+* $\sigma^2 = \frac{1}{m} \sum (z^{(i)} - \mu)^2$
+* $\bar{z}^{(i)} = \frac{z^{(i)} - \mu}{\sqrt{\sigma^2 + \epsilon}}$
+* $\tilde{z}^{(i)} = \gamma \bar{z}^{(i)} + \beta$
+* Normalized Mean & Variance
+* [unclear] $\longrightarrow$ [unclear] learning parameters of model
+* If $y = \sqrt{\sigma^2 + \epsilon}$ Then $\tilde{z}^{(i)} = z^{(i)}$
+* $\beta = \mu$
+* $\Rightarrow$ Can we BatchNorm on $ry$ as it can done
+* [unclear] $\Leftarrow$ [unclear] the bag [unclear]
+* **BatchNorm at test time:**
+* At test time we need to cheese predict
+* from a batch instead of mini-batch
+* [unclear] [unclear] of ism-predict
+* So, the static values of $(\mu, \sigma^2, \tilde{z}^{(i)}, \text{now})$
+* explain next is the station for which like day average of
+* ourge mini-batch
+
+---
+
+* [unclear] Softmax Regression:
+* $\alpha = f(z) = \frac{e^{z^{[l]}}}{\sum_{i=1}^C e^{z^{[l]}_i}}$
+* $C = \text{# classes } (0, 1, 2, \dots C)$
+* This will be provide value for $0$ or $1$. And $\sum =$
+* $\Downarrow$ if $y$ is given $1$. do its the puts of $y = 1, 2, 3, C$.
+* $t = e^{z^{[l]}}$
+* $\alpha = f(z) \dots$
+* Softmax Reg generalizes log R to C classes.
+* `AL PyTorch` :
+* [unclear]
+* [unclear] of PyTorch uses 2 [unclear] of numpy, [unclear] execution.
+* [unclear] of 1 library must be implement (numpy).
+* Any forward need to be given.
+* Pytorch will be automatically tracked.
+* **Tensors:**
+* Tensors similar to arrays/matrices.
+* `import torch`
+* `data = [[1, 2], [3, 4]]`
+* `x_data = torch.tensor(data)`

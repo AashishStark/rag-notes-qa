@@ -1,0 +1,29 @@
+Authentication :
+- Verifying identity of user who is using
+Authorization :
+- Verifying authenticated user has proper
+certain access rights & permission
+
+9.21/ [Preventing unauthorized access]
+- Creating aws account → root account user
+- secure & control any user in the account
+
+Q. AWS IAM
+- Create IAM users → 0 permissions by default
+Principle of least privilege
+- User is granted access only to what they need
+
+IAM policy : JSON doc & what user can do
+- Statement : Effect, Action, Resource
+- Policy → groups & users
+
+Q. AWS IAM roles ← (Assiging)
+- user on off -> same user in account
+* use on off
+Q. AWS IAM Identity Center
+- Single sign on → manages access across
+multiple account
+
+Policies:
+- AWS managed policies (Visually see, read)
+- customer managed policies (custom policy)

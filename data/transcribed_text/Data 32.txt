@@ -1,0 +1,71 @@
+6.7) EFS
+- multiple ec2 can access
+- same time
+- linux file system
+- Requires resources
+- data scale
+
+6.8) storage types
+- supports multiple file systems protocols, file server
+- fully managed service
+- seamless ivy provisioning
+- low latency
+- throughput
+- multiplexer
+
+- Flow of integration with existing apps
+  - Managed service
+  - Predictable storage
+  - cost effective
+
+6.9) storage gateway
+- Integrates on-prem with cloud storage
+- Types:
+  - S3 file gateway: access directly over fs.
+  - volume gateway: store volume storage volumes
+    - volume gateway $\rightarrow$ cached en cloud, local $\rightarrow$ fast
+    - tape gateway: vts stored en cloud, fast $\rightarrow$ slow
+    - is easy for persistent store backup
+
+- Benefits:
+  - Data airy [unclear]
+
+6.10) Elastic Disaster Recovery
+- Benefits:
+  - Business continuity
+  - guaranteed disaster recovery
+  - cost optimization
+
+---
+
+eg 1) buffer groups
+- generic groups $\rightarrow$ fs
+- 2) fitness center
+  - Datastore, SQL, high performance, low latency
+
+Why not EFS?
+- Ideal for city storage
+- Not for repair of db
+- 3) Enterprise Repair groups?
+  - Multiple solutions secure same data
+  - EFS
+
+4) DATABASES
+- Relational Database Service
+- Data resides in structured pattern of data
+- Grouping Relational Data
+  - MySql
+  - Postgresql
+  - MariaDB
+- Migration from on-prem to Cloud - EFS [unclear]
+
+- 5) AWS DMS - Database Migration Service
+  - Automated patching
+  - backup
+  - failover
+  - Quicker Running
+
+- 6) Amazon Aurora - distributed database
+  - postgresql
+  - MySQL
+  - Aurora - distributed rdbms

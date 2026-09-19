@@ -1,0 +1,41 @@
+Tensor attributes :
+- shape : shape ([3, 4]) => defines the shape of array
+- dtype : float32
+- Device : CPU ( [i.e.] tensor on CPU )
+  This can be changed to GPU (cuda) which is useful in deeper networks.
+
+Torch.autograd
+- `q.autograd (fun)` requires_grad = True (Default)
+
+Starting :
+- When token is NO USE of autograd :
+  If the model is pre-trained from web/library, then the statement is written already,
+  `When USE :`
+  If the forward model [unclear] on [unclear] not configured out. Then, this called by figure not configured out. Then, this [unclear] is [unclear] to configure it with the framework.
+  `requires_grad = True`
+- Eg :
+  `a = torch.tensor ([2, 3], requires_grad = True)`
+  `w = [6, 4]`
+  `q = 3*a**3 - b*2` $\rightarrow$ Error (FWA)
+
+---
+
+`requires_grad : its tensor ([5, 13])`
+- `q.requires_grad (gradient = external_grad)`
+  - Just by writing this term it will autoly define the derivative & rates it.
+  - If used in a w/w notify :
+    - `qutput ( 3*a**3 + 9*a*s2 == a.grad )`
+    - `qutput ( -2*ar == b.grad )`
+    - o/p :
+      - `t [ True, True ]`
+      - `t [ True, True ]`
+
+Internally,
+`autograd use vector - Jacobian product.`
+
+$J = \frac{\partial y}{\partial x} = \begin{pmatrix} \frac{\partial y_1}{\partial x_1} & \cdots & \frac{\partial y_1}{\partial x_n} \\ \vdots & \ddots & \vdots \\ \frac{\partial y_m}{\partial x_1} & \cdots & \frac{\partial y_m}{\partial x_n} \end{pmatrix}$
+
+You can derive a model from importing PyTorch $\rightarrow$ which is general, but you can feature the model by modifying its [unclear] from
+`model.fc = nn.Linear (512, 10)`
+$\uparrow$
+[unclear] Fully connected

@@ -1,0 +1,72 @@
+# Deployment
+
+spec :
+  containers:
+    - name: my-app
+      image: my-app:10.17
+    - name: MONGO_URI DE. ROOT_USER_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: secret.name
+          key: secret.key
+
+(This operation --- Two pods def. in same file)
+  dep-bar.yaml
+  { <-- Dep pod
+    <-- Service pod
+  }
+
+IMAGE & maps-express <-- Rest based ADMIN interface for admin.
+
+Page 2:
+spec:
+  - containers:
+      - name: myapp-express
+      env:
+        - value: myapp-express
+        - valueFrom:
+            - secretRef:
+                - key:
+                - value:
+
+<-- It from config Map
+    * ConfigMapRef
+
+---
+
+ConfigMap <-- .env
+kind: ConfigMap
+metadata:
+  name: ex-m
+data:
+  database-uri:
+
+match: Deployment
+  selector:
+    matchLabels:
+      app: myapp-express
+  spec:
+    selector:
+      app: myapp-express
+
+  Type: NodePort
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8081
+      nodePort: 30000 -> (Port 30000 to 32768) To avoid conflicts.
+
+  Type: LoadBalancer
+  CLUSTER-IP -> yes
+  EXTERNAL-IP -> <pending>
+
+  ClusterIP <-- CL-IP -> yes
+            EX-IP -> None
+
+Reason:
+0-1023 -> Well known Port.
+        Used by others.
+1024-49151 -> Private port.
+        Common apps.
+49152-65535 -> Private port.
+        To assign Public IP.

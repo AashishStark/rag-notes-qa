@@ -1,0 +1,46 @@
+Without making any variables to general.
+... [unclear]
+$J(w, b)$
+
+- Contour plot :-
+For an $diff J(w,b)$ there will
+be same $J$, for that contour
+plot which has no use of setting
+value where there is a constant
+value, where there is a contour.
+... [unclear]
+
+The key is how is to find the dip. (J think so)
+- Gradient descent :-
+algorithm to iteratively find the best value for $J(w, b)$
+
+- Imp: gradient descent :-
+`=` assignment operator not "equal to"
+$\begin{aligned}
+w &= w - \alpha \frac{\partial}{\partial w} J(w, b) \\
+b &= b - \alpha \frac{\partial}{\partial b} J(w, b)
+\end{aligned}$
+$\alpha \leftarrow$ learning rate $(0 < \alpha < 1)$
+Repeat this until converges (finds local minima)
+[simultaneously update $w,b$]
+
+---
+
+... [unclear] Learning Rate - How to choose : -
+If $\alpha$ is too small $\to$ too many steps $\to$ way too slow
+If $\alpha$ is too large $\to$ yo may overshoot $\to$ divergence
+
+What if I reached local minima : (It's still gives)
+NO ANSWER
+(UNTIL LR)
+
+$\frac{\partial}{\partial w} J(w, b) = \frac{1}{m} \sum_{i=1}^{m} (f(x^i) - y^i) x^i$
+$\frac{\partial}{\partial b} J(w, b) = \frac{1}{m} \sum_{i=1}^{m} (f(x^i) - y^i)$
+$\Bigg\}$ After Derived
+
+* If in LR, there will be no local minima if squared
+error $f(x)$ is used.
+* It will always have only convex function.
+
+- Batch gradient descent :-
+Match : take steps of go towards an inventory steps.

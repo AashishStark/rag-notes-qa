@@ -1,0 +1,64 @@
+```markdown
+Topic 5:-
+
+- ML frameworks & infrastructure
+    - f/w software on
+        start state providers
+        with pre-built
+        PyTorch, Apache MX
+        Net, TensorFlow.
+
+- 8-1) Gen AI on AWS
+    - Deep learning = subset (ML)
+    - Gen AI is a type of DL.
+    - 1) Amazon Foundation Jumpstart
+        pre-trained FMs & ML solutions
+        quickly deploy solutions know how you use
+        customize model for specific use case & data
+    - 2) Amazon Bedrock
+        Fully managed service
+        Customizing FMs from Amazon & other
+        leading AI companies.
+        Gateway access for various APIs.
+    - 3) Amazon Q
+        Gen AI assistant in business.
+- 8-6) Data Analytics
+    - predictive capabilities of ML/ML
+    - Need clean & secure data
+    - ETL process of data lake & Data warehouse, on
+        Extract
+        Transform
+        load
+        right place.
+
+---
+
+- 8-7) Data pipelines on AWS
+    - Dataware
+        lab
+        1) Amazon Redshift = fast query for data extraction
+        2) Amazon S3 = Redshift for storage.
+    - 3) Amazon EMR, for processing
+    - 4) Amazon OpenSearch = Real time search
+        with gigabyte/petabyte for investigations
+        OpenSearch + Real Time search
+        Mining
+        Analytics.
+    - 5) Kinesis: Ingest data in real time
+        Deliver to multiple locations.
+    - 6) Data Pipeline
+        Move data [unclear]
+    - 7) Amazon Data Brewery
+        Fully managed metadata info
+        Discover, profiling, & wrangle data
+        Automate data cleansing
+        Data governance & comp report.
+    - 8) [unclear] ETL service
+        mass ETL glue service in industry
+        prepare, move, glue data governance.
+    - 9) ECR
+        perform [unclear] simple data proc.
+    - 10) Solution = [unclear] data in S3/w data
+        fully right connection service
+        s3+ [unclear]
+```

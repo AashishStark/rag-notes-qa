@@ -1,0 +1,47 @@
+AI/ML
+
+- Things need to know :-
+  - prog -> numpy, pandas
+  - maths -> linear alg, calculus
+  - classic ML & transformers
+  - DL + transformers
+  - CNN + NLP models
+
+  - gen AI
+  - LLM
+  - RAG
+  - Deployment -> specialized (IMP)
+
+---
+
+- Numpy:
+  - package is manipulated
+  - used for:
+    - manipulate data for w-dimesion ($n >= 2$)
+    - without for-loops.
+    - array used $\leftarrow$ `ndarray`
+    - `numpy.array` = `numpy.array` (only 10 decimals)
+
+* properties *
+  - `ndarray.ndim` $\leftarrow$ no. of dim
+  - `ndarray.shape` $\leftarrow$ $(w, h)$ rows, columns
+  - `ndim` $\leftarrow$ $w \times w$ (No. of elements)
+  - `dtype` $\leftarrow$ types (int32, int64)
+  - `itemsize` $\leftarrow$ floating + 8 (64/8)
+  - size * dtype $\leftarrow$ size in bytes of each element
+  - `data` $\leftarrow$ Buffer containing actual data
+
+---
+
+- array creation
+  - `np.array([1, 2, 3], dtype = 'complex')`
+  - `c = np.array([[1, 2], [3, 4]], dtype = np.complex)`
+  - `np.zeros((2, 4))` $\leftarrow$ `3×4`
+  - `np.ones((2, 3, 4), dtype = np.int16)` $\leftarrow$ 3D array
+  - `np.empty((2, 3))` $\leftarrow$ content / data well be random
+  - `np.linspace()`
+  - `np.arange(start, end, jump)`
+
+* `reshape` & `from numpy import pi`
+  - `np.arange(0, 2, 9)` $\leftarrow$ 9 numbers from 0 to 2.
+  - `np.new(k)`

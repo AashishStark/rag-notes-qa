@@ -1,0 +1,57 @@
+When and why to use this check
+
+- Don't use in training -> Only to debug
+
+- If any fails repeat network, check all components and any data/identity change
+  ( [unclear], data set, dev set )
+- Routine optimization
+- Don't overfit with hyperparameters
+  Policy of random hyperparameters is better
+- Run at random initialization 1 option some
+  [unclear]
+
+Training:
+N,b & W.0.
+
+* Common - previously studied/written
+* Batch & Mini-Batch GD:
+
+Mini-Batch : Alg of tuning net can be-trained
+on substructure of dataset. one whole dataset
+is too massive, so instead of [unclear] size,
+when data is change in huge, sizes, helps to reduce
+time taken per iteration.
+[unclear] for larger datasets without change per iteration itself
+can up take more time to compute.
+
+$x_{(m,n)} = [ x^{(1)}, x^{(2)}, \dots x^{(1000)} ] \times y^{(1)}$
+$(x_{n\times m})$
+  $x^{(1001)}, x^{(1002)} \dots x^{(2000)}$
+
+$y_{(1, m)} = [y^{(1)}, y^{(1000)}, \dots y^{(2000)}] \times y^{(1)}$
+  $y^{(1001)} \dots y^{(n)}$
+
+Mini-Batch loss function will be vector component $\epsilon$
+  $x \{x^{(1)}, y^{(1)}\}$, $\{x^{(2)}, y^{(2)}\}$
+  $x^{(t)}, y^{(t)}$
+
+Binary case:
+If val of batch size = m $\rightarrow$ Batch gd.
+If $\quad \dots \quad \dots \quad = 1 \rightarrow$ Stochastic gd.
+                  $1 < m < m$
+
+**In practice** $\rightarrow$ mismatch substructure $1 < m$
+              (cost, tax by/ small).
+- Fastest convergence $\leftarrow$ optimization ($\sim 1000$)
+  - Makes progress without waiting for $\dots$
+If tiny dataset too small $\rightarrow$ use batch gd.
+Typical mini batch sizes $\rightarrow$ 32, 128, 256, 512
+                            $2^5, 2^6, 2^7, 2^8, 2^9$
+Make sure Mini-batch fits on cpu/gpu memory.
+                          $x^{(t)}, y^{(t)}$
+
+**Exponentially Weighted Averages:**
+This is for the datasets
+with values like a see-saw decay
+$V_t = \beta V_{t-1} + (1-\beta) \theta_t$
+Time, $\theta_t$ is the weight of pure data; it helps to predict or include the net data when it comes.

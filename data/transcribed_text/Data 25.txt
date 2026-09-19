@@ -1,0 +1,71 @@
+fun for [unclear]
+9. design applications to scale [unclear] to whatever
+any device
+9. design workflows <span style="display:inline-block; transform: rotate(90deg);">&#9654;</span> unified desktop experience.
+fully managed control plane anywhere
+serverless that runs across diverse resources
+9. orchestrate [unclear]
+with camel
+
+13-3) AWS well architected Framework
+Builds more secure, high performing, resilient, &
+efficient infra for their apps.
+
+Pillar (6):
+Operational Excellence
+Security
+Reliability - Fault Tolerance
+Perf. Efficiency
+Cost optimization
+Sustainability
+
+13-4) type. use case
+[unclear] service (Only that)
+Trigger <span style="display:inline-block; transform: rotate(90deg);">&#9654;</span> API gateway <span style="display:inline-block; transform: rotate(90deg);">&#9654;</span> lambda <span style="display:inline-block; transform: rotate(90deg);">&#9654;</span> DynamoDB
+<span style="display:inline-block; transform: rotate(270deg);">&#9654;</span>
+X-Ray
+
+---
+
+<hr>
+
+ex 1 - Staircase with $W$ max steps per step explanation
+[unclear]
+
+Climb up staircase with $w$ max steps,
+take in steps within $1$ & $w$ steps
+at a time.
+
+Count no. of ways
+$w = 1 \rightarrow 1 \rightarrow ((1)) \rightarrow 1$
+$w = 2 \rightarrow 2 \rightarrow ((1,1), (0, 2)) \rightarrow 2$
+$w = 3 \rightarrow 3 \rightarrow ((1, 1, 1), (0, 2, 1), (1, 0, 2), (3)) \rightarrow 4$
+$w = 4 \rightarrow 4 \rightarrow ((1,1,1,1), (0,2,0,2), (0,0,0,4),$
+$(1,1,...))$
+
+Relation:
+$F(w, i, j)$
+Res of adj norm. $([w] [1+i] \times )$
+
+memo:
+$Mem = [2] [i]$
+$\sim [2] [i]$
+$\sim [2][3]$
+$\sim [2][4]$ :
+$[0] [E] + [0] [E] \rightarrow [0][E] + [0][E]$
+$\dots$
+$\dots$
+
+$\left[ \frac{w+1}{w} \right]$
+Max amount
+$\begin{matrix} memo \\ [0] [E] + [0] [E] \\ [0] [E] \\ [0] [E] \end{matrix}$
+$[0] [E-1]$
+
+$\left[ 0 \right] [E] + \left[ 0 \right] [E] + \left[ 0 \right] [E] \dots + \left[ 0 \right] [E] = [E] [E] [E] \dots + [E] [E] [E]$
+$\left[ 0 \right] [E], [0] [E], \left[ 0 \right] [E + 2]$
+$\left[ 0 \right] [E]$
+
+$\begin{matrix} memo \\ memo (n-1) + \\ memo (n-2) \end{matrix}$
+
+def sols(num,
+  memo_[] )

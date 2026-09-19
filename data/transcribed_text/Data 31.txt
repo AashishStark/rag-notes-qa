@@ -1,0 +1,56 @@
+# <3) NoSQL DB
+
+- Non-relational database NoSQL DB
+- For handling unstructured / semi-structured data
+- Data = rows + cols of records?
+- attributes: Name + Value
+- No predefined schema
+- If needed,
+  - speed
+  - flexibility of relung [unclear] schema
+  - offloading of management
+
+# RDS:
+
+- Store $\rightarrow$ RDS $\rightarrow$ Create DB $\rightarrow$ RDS
+  - MySQL
+  - Free tier
+  - DB ID
+  - Cred - UN, PWD
+  - Public access - yes
+  - Wait station [unclear]
+    Available
+
+- With enabled IP connectivity & Security
+- Endpoint
+  - port
+- You can access sql client
+
+# DynamoDB
+
+- Store $\rightarrow$ DynamoDB $\rightarrow$ Create table $\rightarrow$ Name $\rightarrow$ key-value
+- 25 GB/200 Read/Write
+- Explore table items (Nearest table)
+- query
+- scan table
+
+# 1-C) In-Memory Managed Services
+
+Caching & storing data same query
+Caching layer
+
+- Caching indices are present on primary key
+- By storing freq access data in high speed easily access location
+- Data Caching:
+  - store in exp memory (cache)
+  - Near - bing access
+
+# Tools: Redis app, ElastiCache, Memcached
+
+- ElastiCache
+  - fully-managed service
+  - simplifies deployment, operation & scaling of in-memory data store
+  - continuously buy input cache
+  - Enhances perf & throughput
+  - offers flexible scaling
+  - Reduces operational overhead

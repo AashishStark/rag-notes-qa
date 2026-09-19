@@ -1,0 +1,42 @@
+After this comes with ...
+with "Boosting" concept.
+↳ Out of $\mathcal{F}$: While reseeding randomly are removed
+or not considered same data for every stages,
+we need to combine the summated one
+and so if it gives same predicted.
+
+AdaBoost: (Any of Boost)
+loss function:
+RandomForest : $\text{Cross Entropy }$- loss
+learn from pre- tree with its sum of
+combined decision tree.
+
+K-Means Clustering:
+Steps:
+$\text{Measure distance: find sizes, variance}$.
+$\text{Apply formula}$.
+
+---
+
+## DEEP LEARNING
+
+1) Neural Networks:
+
+Applications:
+Image Recog $\rightarrow$ CNN
+Seq Next - Token
+memory Seq $\rightarrow$ Generative Recog!
+
+eg with $\mathcal{F}$ : Handwritten Number Recogn
+Neurons $0 \rightarrow 0$ to $1$.
+$0 \rightarrow$ blank
+...
+$\text{O/p layer has}$
+$0, \text{ lets say value is } 0.28 \rightarrow \text{ Activation}$
+
+- This fn is called as ReLu function.
+- Rectified Linear Unit.
+- "It takes any +ve value"
+
+Instead of one feature, if there are multiple features
+then neurons get increased.

@@ -1,0 +1,56 @@
+# 12.4 7 Rs of Migration
+- Rehost (Lift & Shift)
+- Relocate
+- Replatform (Lift-Tinker & Shift)
+- Refactor (Move to serverless)
+- Repurchase (Drop & Purchased)
+- Retain (Deprecate apps)
+- Retire
+
+# 12.4) Migration services & Tools
+- Q. AWS Migration Odyssey
+  - Migration Discover
+    - Migration Journey (Transfer cost to cloud)
+    - Migration Evaluator (Cost compliance much?)
+    - Migration Hub (Only track progress - tracks)
+- Q. Fundamental migration journey
+  - Portfolio discovery
+  - Assessment (with my versions)
+  - Cost savings
+  - Faster time to value.
+
+# 12.5) DB Migration in AWS
+- Q. DB Migration service
+  - One time & fast.
+  - To send from & to store it.
+  - Replaces
+- Q. Same & same transaction test
+  - Time-consuming
+  - Cost-ff
+  - Predictable
+
+# 12.6) Transporting Data Online
+- Q. AWS Data sync
+  - Q. sync Transfer from family (FTP, SFTP, FTPS)
+  - Q. sync Direct Connect
+
+# 12.7) Snow - Data Offline
+- Q. & maintain edge storage optimized devices
+
+# 13. Which event solutions
+- Q. why well-architect framework
+- Q. AWS Operational planning
+  - Q. why well-architected
+    - instrument customer reporting
+    - Helps build a setup in workflow
+    - dev, test, prod
+- Q. AWS X-Ray
+  - Monitor - Debug
+- Q. AWS AppSync
+  - Graph QL API. (best/mobile apps)
+- Q. AWS amplify
+  - auth, DB, node js, app/ Hosting
+- Q. For Business
+  - 1. amazon connect
+  - 2. r/w items (text/ext)
+  - 3. Simple Email service (SES).

@@ -1,0 +1,45 @@
+# Service:
+* Permanent IP addresses
+* Redirection of pod & service not connected.
+
+# Ingress:
+* forwarding public to private
+* External service $\longrightarrow$ has centrally we can use `https://google.com` $\longrightarrow$ This process is handled by Ingress.
+* Internal Service
+ `http://11.102.188.122:9010` $\longrightarrow$ does not control worker nodes.
+
+# ConfigMap & Secret:
+* For ConfigMap:
+External config of apps. (like a global constant value that can be configurable).
+If configs are there.
+① re-install
+② push to repo
+③ inject to pod
+$\}$ Solve this ConfigMap.
+
+Secret: Same as ConfigMap, but to store good other things securely encrypted. $\ddot{\smile}$
+$\leftrightarrows$ Not visible to all.
+
+# Volumes:
+$\longrightarrow$ Can be local or remote.
+$\longrightarrow$ To store the data even if pod gets restarted.
+
+# Replica:
+Deployment: (Blueprint for pods).
+$\longrightarrow$ Monitoring how many system replicas for the pod has created.
+$\longrightarrow$ Abstraction of pods.
+$\longrightarrow$ As a dev, we will create deployment instead of pods.
+
+# Stateful Set:
+Mainly used for DB related data. storage.
+For stateful apps. (Stateful Sets).
+Recommended: Headless in outside cluster.
+
+# Archi:
+Node - worker machine :
+Pod control area -
+① Container runtime - Docker.
+② Kubelet - Kubelet - Interacts with container and nodes.
+③ Kube proxy: Load any same pod redirection instead of routing networking.
+$\longrightarrow$ `droid` $\longrightarrow$ `n/u` overhead $\longrightarrow$ off node off service 
+$21/P2P$.

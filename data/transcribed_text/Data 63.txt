@@ -1,0 +1,81 @@
+# Normalization (Norn):
+
+Mean
+$$\mu = \frac{1}{m} \sum_{i=1}^{m} x^{(i)}$$
+
+$X := X - \mu$
+
+Var
+$$\sigma^2 = \frac{1}{m} \sum_{i=1}^{m} (x^{(i)})^2$$
+
+$X := X / \sigma$
+
+## Why normalize?
+* aligns with the sample in
+* human optimizing with the smaller $h$
+
+## Understand:
+* It helps model to learn faster.
+
+## Vanishing / Exploding gradients:
+
+- If $w \in [1, ]$, then $w \uparrow$
+- If $w \in [0, 1]$, then $w \downarrow$
+
+Then $\sigma = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$
+$\Sigma = \begin{bmatrix} 1.5 & 0 \\ 0 & 0.7 \end{bmatrix}$
+$\Sigma I = \begin{bmatrix} 0.9 & 0 \\ 0 & 0.7 \end{bmatrix}$
+
+Problem in better
+$$\circlearrowleft$$
+Weight Initialization for Deep N/n s:
+
+- These act $\uparrow / \downarrow$ chapters exponentially.
+
+### To overcome:
+- $z = w_1 x_1 + w_2 x_2 + \dots + w_n x_n$.
+- large $w \rightarrow$ smaller $w_i$ (unseen)
+- $\text{Var} (w_i) := \frac{1}{n}$
+
+$w [m] = \text{np.random.normal(shape)} * \text{np.sqrt} \left(\frac{1}{\text{size } (-1)}\right)$
+
+---
+
+$f(o-s)$
+$f(o)$
+$f(o+s)$
+
+$g(o) = 3o^2 = 3$.
+
+Approx Error: $0.001$.
+
+$$\frac{f(o+s) - f(o-s)}{2s} \approx g(o)$$
+
+$$\frac{(1.01)^3 - (0.99)^3}{2(0.01)} = 3.001$$
+
+$$\text{diff}(0.01)$$
+
+- $0-s \quad o \quad o+s$
+- $0.99 \quad 1 \quad 1.01$
+- $S = 0.01$
+
+- Thus, centered of certainty one $d(0,-s)$ we are taking account with rule of $(0-s, 0, 0+s)$ which has better results mathematically compared to other two $d$.
+
+$$\nabla E(0-s, 0, 0+s) = 0.001 \quad (\text{Error} \uparrow)$$
+$$E(0-s, 0) = 0.001$$
+
+## Gradient Checking:
+To debug / verify the implemented backprop cut on or not
+
+For each $\theta$:
+$\text{d approx} = \frac{f(\theta_1, \theta_2, \dots, \theta_i+s, \dots) - f(\theta_1, \theta_2, \dots, \theta_i-s, \dots)}{2s}$
+
+$$\text{if } \frac{d\text{ approx} - \text{d} \theta}{\text{d approx} + \text{d} \theta} \cong d(o) f \text{ then } \text{ok.}$$
+
+Total check:
+not error!
+
+If:
+$\text{d approx} \cdot \text{d} \theta$
+
+$\frac{|\text{d approx} - \text{d} \theta|}{\text{d approx}/2 - |\text{d} \theta|/2} \approx \begin{cases} < 10^{-7} \rightarrow \text{good} \\ 10^{-3} \rightarrow \text{bad} \end{cases}$

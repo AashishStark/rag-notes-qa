@@ -1,0 +1,38 @@
+Gradient:
+$$\frac{d W^{[L]}}{N} = (\text{prev val}) + \frac{\lambda}{N} W^{[L]}$$
+$$W^{[L]} = W^{[L]} - \alpha \frac{d W^{[L]}}{N}$$
+
+# Why Reg Reduce Overfitting?
+* Suppose instead of underfitting loss, don't want to fit unwanter noise in y-axis, then it comes a model $\uparrow$, if $\Delta L$ var of net will increase $\implies$ size of $W \uparrow$, wavelength small will become multiple $N/N$ (want to retain data).
+
+# Dropout Regularization:
+* alternative of $L_2$ Regularization $\|W\|_F^2$
+* This will run an technique called **dropout**, where we drop some of the no. of neuron randomly in the layers.
+layer $l = 3$ $\to$ keep_prob = $0.8$
+
+$$d3 = \text{np.random.rand} (a3.\text{shape}[0], a3.\text{shape}[1])$$
+$$d3 = d3 < \text{keep_prob}$$
+$$\times \text{ keep_prob} = 0.8$$
+$$a3 = \text{np.multiply} (a3, d3)$$
+$$a3 / = \text{keep_prob} \to \text{To keep the matrix value same}$$
+$$y[\text{hat}] = W^{[L]} a^{[L]} + b^{[L]}$$
+$$\rightarrow \text{ reduced by } 20\%$$
+$$l = 0.8$$
+Multify pred at test time $\implies$ No need to dropout.
+
+---
+
+relies only on every one feature, so it is spread out weights.
+It will reduce the features.
+Randomly $0 \to$ randomly
+
+# Other ml methods:
+## Data augmentation:
+Instead of especially more data/pics, modify the data, i can't modify not can, data like flipping it and cropping it or change the colors.
+* Random Rotations $\to$ Transformations
+
+# Early Stopping:
+By stopping early means of this situation stopping before this error goes y direction, which means that '$W$' will be somewhat less compared to completely stop iteration.
+* **Downside:**
+  $$\text{Optimiz} \begin{cases} J \end{cases} \begin{cases} \text{There will take} \\ \text{a trade-} \text{If} \\ \text{Not Overfit} \end{cases}$$
+  etc etc.

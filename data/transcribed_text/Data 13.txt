@@ -1,0 +1,62 @@
+# LR with Multiple Features:
+## Multiple features : (Multiple Inputs)
+
+$x_1, x_2, x_3, x_4 \longrightarrow x, w \longrightarrow y$
+
+$f(w) = \sum_{i=1}^{n} w_i x_i + b \leftarrow$ Without Vectorization
+
+Vectors $\begin{cases} \vec{w} = [w_1, w_2 ... w_n] \\ \vec{x} = [x_1] \end{cases}$
+
+$\therefore f(\vec{w}) = \vec{w} \cdot \vec{x} + b \longleftarrow$ With vectorization
+
+It is called "Multiple LR"
+
+Vectorization:
+- More faster & efficient (Computer does parallely)
+$f = np.dot(w, x) + b$
+
+# SGD for Multiple LR:
+
+Repeat {
+$w_j = w_j - \alpha \frac{\partial}{\partial w_j} J(\vec{w}, b)$
+$b = b - \alpha \frac{\partial}{\partial b} J(\vec{w}, b)$
+}
+
+Repeat {
+$w_1 = w_1 - \alpha \frac{1}{m} \sum_{i=1}^{m} (f(\vec{w}, b)(\vec{x})^i) - y^i) x_1^i$
+$\vdots$
+$w_n = w_n - \left(\frac{1}{m} \sum_{i=1}^{m} (f(\vec{w}, b) (\vec{x})^i) - y^i\right) x_n^i$
+}
+
+$\uparrow$ (After derivation)
+
+# Feature Scaling:
+
+Normal Equation -> only works for LR.
++ solves for $w, b$ without iterations
++ [unclear] slow when dataset is large.
+
+Rescaling helps in finish the [unclear]
+iteration [unclear] in your dataset.
+
+| feat | size |
+|---|---|
+| #bedrooms | 2 |
+
+$\begin{matrix} 200 & 5000 \\ cost & 20000 & 50000 \end{matrix}$
+
+$\rightarrow$ Dealing with [unclear] DIFFERENCE
+
+$200 \le x_1 \le 5000$
+
+$x_{1 \text{ scaled}} = \frac{x_1}{5000}$
+$0.04 \le x_{1\text{ scaled}} \le 1$
+
+$x_{2 \text{ scaled}} = \frac{x_2}{2}$
+$0 \le x_2 \le 1$
+
+# Mean Normalization:
+
+$x_1 = \frac{x_1 - \mu_1}{\max - \min}$ $\rightarrow$ range
+
+$x_1 = \frac{x_1 - \mu_1}{\sigma_1}$ $\rightarrow$ (Gradient Descent $\rightarrow$) Z-score [unclear]

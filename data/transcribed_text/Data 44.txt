@@ -1,0 +1,63 @@
+AWS responsibility + provider responsibility -> this is 'consulted'
+for using new instance ->
+- Deployment automated
+- OS / OS root consistent ->
+
+2.5 EC2 Purchasing
+- purchase options
+  - On-Demand (pay-as-you-go)
+  - Savings Plans (1 year / 3 years commit)
+    measured per hour $ savings up to 72%
+    applies to EC2 / Fargate / Lambda ->
+  - Reserved Inst. (1 year where predictable use)
+    75% dis. comp. to on-demand ->
+- cost:
+  - full upfront
+  - partial upfront
+  - no upfront
+- Spot Inst. (use spare EC2)
+  avail. on AWS
+  start at any time, AWS can take it
+  90% off on-demand.
+  2 min warning.
+  always maintain target replicas.
+- Dedicated Host (physical server to custom)
+  No sharing.
+  ( For licensing likes, win / sql).
+  Inst placement & res. allocation
+  Maintain inv. placement & res. allocation
+  Security sensitive.
+
+- Host has multiple servers.
+  Dedicated Inst. has dedicated servers.
+  - unit splitting/insts: <- On-Demand
+  - saving plans (predictable)
+  - capacity reservations (virtual workload with
+    strict capacity req.)
+  - Reserved Inst. flexibility (instance status inherits
+    and used when initial.)
+  - 75%
+  - If RI purchased, then
+    save applies discount to other insts.
+    within same family.
+
+2.6 Scalability EC2
+- scalability & elasticity -> dynamic / on-demand
+  system potential adj. of resources
+  in grow over time.
+  scale down capacity
+  start system grows
+  cost: off + optional
+  auto usage.
+
+- scale-out
+  - lazy scaling
+  - add more res. to pool
+  - parallel
+
+- scale-up
+  - vertical scaling
+  - add more power
+  - & hardware
+  - more power per
+    req.

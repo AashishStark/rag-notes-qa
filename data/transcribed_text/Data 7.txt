@@ -1,0 +1,51 @@
+# Standard NN:
+- $w_1, w_2, w_3, \dots, w_n$
+- $0 \rightarrow y$
+
+# Convolutional NN:
+- $Img \rightarrow conv_1 \rightarrow conv_2 \rightarrow conv_3$
+
+# Recurrent NN:
+- $y_{t-1} \rightarrow y_t \rightarrow y_{t+1}$
+
+# Binary Classification:
+- $o/p \rightarrow \begin{cases} 1 \rightarrow cat \\ 0 \rightarrow Not\, cat \end{cases}$
+- $o/p \rightarrow Img$
+- $I/P \rightarrow 3 \, RGB \rightarrow \downarrow\downarrow\downarrow 3 \, ch \text{ by } 4H$
+- Image:
+  - Input layer $\begin{bmatrix} r \\ g \\ b \end{bmatrix}$ (each $n_x$)
+  - $X = \begin{bmatrix} | & | & & | \\ x^{(1)} & x^{(2)} & \dots & x^{(m)} \\ | & | & & | \end{bmatrix}_{n_x \times m}$
+  - $X\text{-shape } = (n_x, m)$
+
+## Notations:
+- $(m, y)$ is a training gp
+- $m \rightarrow$ training sp
+- $\Big\{(x^{(1)}, y^{(1)}), (x^{(2)}, y^{(2)}), \dots, (x^{(m)}, y^{(m)})\Big\}$
+- $X = [x^{(1)}, x^{(2)}, \dots, x^{(m)}]$
+- $Y = [y^{(1)}, y^{(2)}, \dots, y^{(m)}]$
+
+---
+
+# Logistic:
+- Input $= x$, $o/p = \hat{y} = P(y=1|x)$
+- Parameters: $w, b$, $w \in \mathbb{R}^{n_x}, b \in \mathbb{R}$
+- Output: $\hat{y} = \sigma(w^Tx + b)$
+- $\sigma(z) = \frac{1}{1 + e^{-z}}$
+- $z$ is too small $\Rightarrow \sigma(z) = 0$
+- $z$ is too large $\Rightarrow \sigma(z) = 1$
+
+# Loss/Cost fun:
+- $L(\hat{y}, y) = -(y \log(\hat{y}) + (1-y)\log(1-\hat{y}))$
+- $y = 0 \rightarrow z = -(1-\hat{y}) \log(1-\hat{y}) + [unclear]$
+- $y = 1 \rightarrow z = -y \log(\hat{y}) \rightarrow$ big
+
+- $J(w, b) = \frac{1}{m} \sum_{i=1}^{m} L(\hat{y}^{(i)}, y^{(i)})$
+
+# GD:
+- same as logis.
+- $w = w - \alpha \frac{\partial J(w, b)}{\partial w}$
+- $\alpha = \text{learning rate}$
+- $J = 1 - \epsilon = \frac{d(J(w, b))}{d \hat{y}}$
+
+# Derivatives:
+- chain Matrix Concept

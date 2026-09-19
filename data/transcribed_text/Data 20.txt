@@ -1,0 +1,28 @@
+Web Security:
+1. CORS - Cross Origin Resource Sharing
+   - Who is allowed to access data from [unclear].
+   - It relaxes the security rule for production.
+   Frontend -> IP: 3000
+   Backend -> IP: 8080 (this must be known to the backend)
+   - It check an array - [unclear] - origins - if the result is true - then it allow, else not.
+2. CSRF (Cross - Site Request Forgery)
+   - It can attack without [unclear]
+   - malicious sites in browser where they trigger unauthentic request when user applied input on cookies.
+   - To prevent this, Anti-CSRF tokens will be sent for every HTTP req.
+
+SpringBoot <-> Employer Backend
+
+Controller:
+1. API's defining
+2. Calling services
+3. Handling HTTP Req/Response
+@RestController
+@ReqMapping
+@getm
+@PostMAPPING
+
+Service:
+1. Called by controller
+2. Interface.
+3. Implements the service
+4. Create classes for repo, Jpa services, mapper.

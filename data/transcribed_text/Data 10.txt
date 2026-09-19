@@ -1,0 +1,43 @@
+Decision Boundary:
+- Threshold value
+  $$0 \le \frac{1}{1+e^{-z}} \le 1$$
+
+  If $\frac{1}{1+e^{-z}}$ is lower than threshold $\rightarrow 0$.
+  If threshold is $0.5$
+  $\vec{w} \cdot \vec{x} + b \ge 0 \rightarrow y = 1$
+  $\vec{w} \cdot \vec{x} + b < 0 \rightarrow y = 0$
+  $\vec{w} \cdot \vec{x} + b = 0 \rightarrow y = 0.5$
+
+- Cost function for logr:
+  If we apply the same 'squared error cost' from L.R., it will not give convex and will have lot of local minima, which is not a good approach.
+  (non-convex graph shown)
+
+- Logistic loss function:
+  $$l(f_{\vec{w},b}(\vec{x}^{(i)}), y^{(i)}) = \begin{cases} -\log(f_{\vec{w},b}(\vec{x}^{(i)})) & y=1 \\ -\log(1 - f_{\vec{w},b}(\vec{x}^{(i)})) & y=0 \end{cases}$$
+
+  $$l(f_{\vec{w},b}(\vec{x}^{(i)}), y^{(i)}) = -\log(f_{\vec{w},b}(\vec{x}^{(i)})) y^{(i)} - (1-y^{(i)})\log(1 - f_{\vec{w},b}(\vec{x}^{(i)}))$$
+
+  Loss is lowest when $f_{\vec{w},b}(\vec{x}^{(i)})$ predicts true value i.e. true label $y^{(i)}$.
+
+- Cost:
+  $$J(\vec{w}, b) = \frac{1}{m} \sum_{i=1}^{m} l(f_{\vec{w},b}(\vec{x}^{(i)}), y^{(i)})$$
+
+  Find $\vec{w}, b$ where minimizes $J$:
+  $$J(\vec{w}, b) = -\frac{1}{m} \sum_{i=1}^{m} [y^{(i)} \log(f(\vec{x}^{(i)})) + (1-y^{(i)}) \log(1 - f(\vec{x}^{(i)}))]$$
+
+- Implementation:
+  repeat {
+    $$w_j = w_j - \alpha \frac{\partial}{\partial w_j} J(\vec{w}, b)$$
+    $$b = b - \alpha \frac{\partial}{\partial b} J(\vec{w}, b)$$
+  }
+
+  repeat {
+    $$w_j = w_j - \alpha \frac{1}{m} \sum_{i=1}^{m} [(f_{\vec{w},b}(\vec{x}^{(i)}) - y^{(i)}) x_j^{(i)}]$$
+    $$b = b - \alpha \frac{1}{m} \sum_{i=1}^{m} [f_{\vec{w},b}(\vec{x}^{(i)}) - y^{(i)}]$$
+  }
+
+  simultaneous updates
+  repeat {
+    $$w_j = w_j - \alpha \frac{\partial}{\partial w_j} [J(\vec{w}, b)] \implies \frac{\partial}{\partial w_j} J(\vec{w}, b) = \frac{1}{m} \sum_{i=1}^{m} (f_{\vec{w},b}(\vec{x}^{(i)}) - y^{(i)})x_j^{(i)}$$
+    $$b = b - \alpha \frac{\partial}{\partial b} [J(\vec{w}, b)] \implies \frac{\partial}{\partial b} J(\vec{w}, b) = \frac{1}{m} \sum_{i=1}^{m} (f_{\vec{w},b}(\vec{x}^{(i)}) - y^{(i)})$$
+  }

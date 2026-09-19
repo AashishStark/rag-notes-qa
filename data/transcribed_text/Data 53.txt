@@ -1,0 +1,54 @@
+Distribute node maps-exp-service
+To get public IP:
+assign
+- Public IP: 30000 - nodePort
+
+DB:
+Mongo Ex. 01 $\rightarrow$ App External $\rightarrow$ Pod $\rightarrow$ DB Internal
+Service $\uparrow$
+Image
+(mongo-express)
+Image
+(mongo)
+
+Namespaces:
+NA
+NS
+
+Cluster
+* Org. run on namespace
+* virtual cluster remote cluster
+
+Namespace:
+- default
+- kube-system
+- kube-public
+
+heartbeat of each nodes
+- currently own
+ data (etcd) $\rightarrow$ kube-master-server $\rightarrow$ OOB. run KUBE
+Master-process $\rightarrow$ kube-system
+$\rightarrow$ controller $\rightarrow$ [unclear] $\rightarrow$ deleted in minikube
+
+Why?
+① for large system with multiple teams / users
+logging / Monitoring / DB/ storages / Ingress
+etc., are grouped sun in.
+② Speed verification, own team during dev.
+
+③ Resource sharing - staging & development
+- Reduce human deployment.
+
+④ Quota & Res Limits
+
+⑤ Each NS relation with own config Map
+② Volumes, Nodes can't create from dev.
+
+get exec:
+kubectl get all -n my-namespace
+
+yaml:
+apiVersion: v1
+metadata:
+  name: whatever
+  namespace: ~

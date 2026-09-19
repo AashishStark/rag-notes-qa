@@ -1,0 +1,81 @@
+# {Spring Boot}
+
+Security:
+
+OWASP - relevant away 4 years for
+Walting what all are the issues
+Re-security - New vulnerable
+
+Dependency -> Spring Security
+-> Just by adding this dependency, instant
+running are project, spring will add again form auth
+USR/PWD.
+
+Client
+Req
+Res
+Filter
+Front
+Controller
+Servlet Container
+Tomcat Service
+
+Token are handled in Sec.
+For not UN/PWD: App. prop:
+spring.security.user.name : "_"
+Password: "_"
+
+POST:
+User get request body.
+Need:
+Req using only parameter, it will be easily attacked by
+malicious user. As They'are not sending over the period of time (like expirer)
+To avoid that for (POST, DELETE) the query cost is needed for each
+call he was for each req than write it.
+
+---
+
+POST call.
+Need to include this in header for our
+`x-CSRF-TOKEN` : `[unclear]`
+In code.
+```java
+@RequestMapping("/csrf-token")
+CsrfToken getToken (HttpServletReq req) {
+    (<-) -> Typenoth
+    return (Csrf) req.getAttribute("-csrf");
+}
+```
+Verify:
+create one verify cls. Inside one class
+This is for routing -> custom security than the
+default settings.
+
+@ Configuration
+@ EnableWebSecurity
+public class SecurityConfig {
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http)
+        throws Exception {
+        return http.build();
+    }
+}
+
+For get (tion ->
+httpBasic (Default).
+
+(1) DISABLE CSRF
+```
+login/logout ->
+RESTAPIENPOINT
+```
+It just by-passes all of the security
+There will be no need login from client
+```java
+use from lyn default for Vi alone
+http.csrf(customizer -> disable());
+http.authorizeHttpReq(req -> req.anyReq()).
+http.authorizeHttpReq(a.anyReq()).authenticate();
+```
+only session for POST/DELETE calls

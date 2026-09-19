@@ -1,0 +1,57 @@
+# Integration & Management Services
+
+* Amazon EC2 Auto Scaling
+  * Dynamic scaling & scaling out based demand
+  * Predictive scaling & scheduled actions out of predictive finality & ang based on demand.
+* Auto Scaling Groups:
+  * Collection of EC2 inst.
+  * ① **Min. capacity**:
+    * Min. no. of inst. after the launch of auto scale group.
+  * ② **Desired capacity**:
+    * Ideal no. of req. insts. to handle the current workload. (Def. of insts.)
+    * Need to be very. (Def. of minimum)
+  * ③ **Max. capacity**:
+    * Upper limit of no. of insts.
+    * Priority over scaling -> Scale UP/DOWN.
+    * Based on traffic.
+
+# Directing traffic with Elastic Load Balancing (ELB)
+* To bal. traffic across a grp. of EC2 inst.
+* ELB: Take req. and route them to inst.
+* Manage traffic + upgrade
+* **ESLT**: Designed to distribute w/s traffic to improve application scalability.
+  * Can manage both internal & external traffic
+  * To optimize performance / reliability.
+
+---
+
+# Internal:
+- Front-end
+- Back-end
+
+# Routing Methods:
+- Round Robin
+- Least Connections
+- IP Hash
+- Least Response Time
+
+# Managing & queuing (Event driven)
+* **Tightly coupled arch.**
+  * If a single component fails or overloads, it causes issues for other components or even the whole system.
+* To overcome this:
+  * Amazon Simple Queue Service (SQS)
+  * Amazon Simple Notification Service (SNS)
+
+```
+[ app A ] -- [ SQS ] -- [ App B ]
+              queue
+```
+
+- Like TAE - customer relation: customer gives items, TAE with ticket. Can handle/count it.
+
+- **Payload** - Data containing a session message.
+- Where msgs are placed until they are processed.
+- **front msgs**
+- **future msgs**
+- **Receive msgs**
+  * w/o reference components at any volume.

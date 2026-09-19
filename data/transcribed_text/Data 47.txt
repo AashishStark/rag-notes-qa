@@ -1,0 +1,57 @@
+1.6: Shared Responsibility Model
+- flexibility: [unclear] of by both resp (customer / provider)
+- security of the cloud vs security [unclear] the cloud
+  customer -> provider
+
+Resp:
+```
++----------+---------------------------------+
+| CUSTOMER | customer data                   |
+|          | client side data do [unclear]   |
+|          | acc. side [unclear]             |
++----------+---------------------------------+
+| BOTH     | no. traffic protection          |
+| VARIES   | platform, appln, IAM            |
+| BY SERVICE| OS, network / firewall cfg     |
+|          | compute, storage, DB, N/w S/w   |
+|          | updates                         |
++----------+---------------------------------+
+| AWS      | Hardware, [unclear] global infra|
+|          | (Regions, AZs, edge loc.)       |
++----------+---------------------------------+
+```
+
+Eg.: RBAC can be provided from AWS but its customer resp. to provide which role to who.
+
+1.7 - Real Life Use Cases:
+Topic: global infra, shared resp.
+- Region are same, but [unclear]
+  global infra & Regions run by provider shared in
+  customer location to reduce latency.
+- financial [unclear] runs in the provider as [unclear]
+  thus requires data / insurance gen stored / used.
+
+---
+
+Mod 2
+2.1) COMPUTE 💡
+- processing power needs to run applns, manage data and perform tasks.
+- avail on-demand.
+  [ VERTICAL SCALING ]
+- MEANING: creating virtual machines with cloud provider in your supplier and [unclear] on-demand.
+- Benefits over [unclear]:
+  -> highly flexible
+  -> cost-effective
+- MULTI - TENANCY: sharing h/w w/ w/o VM S/w.
+  -> guest: I run on host machine.
+  -> hypervisor: [unclear] of resource sharing and isolations.
+- Managed by AWS:
+  -> CONFIGS:
+     NEW / LEASE:
+     on lease: traffic flow start need to run.
+     Instance size appln.
+     Initial size appln.
+     DB/s
+  - control the n/w, respect public / private access.
+  ( Compute as software (coal) )
+  VMs mange

@@ -1,0 +1,34 @@
+# Environment variables and API keys
+.env
+.env.*
+!.env.example
+
+# Python caches and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Local Vector DB and cache
+data/chroma_db/
+.cache/
+
+# Execution logs and temporary outputs
+*.log
+output_*.txt
+output_transcribe_notes.txt
+
+# Editor and IDE configurations
+.vscode/
+.idea/
+
+# OS-generated files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,44 @@
+NNs (Initiate PyTorch):
+Unstructured data (text, image, passage)
+Keras
+Transformer Models
+NLP
+To understand human language.
+Use cases includes sentiment analysis,
+named entity recg., machine translation.
+- LLM -> subset of NLP.
+- Massive fixed
+- Extensive training data
+- NLP -> field of seq2seq (e.g., variety of languages)
+Transformers:
+(from transformers import pipeline)
+- Solves all kinds of charles areas
+- diff modalities, structure, NLP, CV, ...
+(Text, audio, video)
+
+---
+
+History of applers:
+Transformer
+seq2seq
+{
+  GPT-Models: generative (like predict next)
+  BERT-Models: Bi-dir Encoder Representation from Tran.
+}
+If. role: seq-to-seq TM
+Transformers -> Seq - to - seq models.
+Trained on:
+Kernels in self-supervised fashion.
+Type of training where etc. automatically
+computed from the inputs of the model, no need
+to label the data.
+Why Prompt learning:
+9L -> training the pre-trained model
+Why: Computing for a raw model is higher in
+cost and emits higher $CO_2$. To reduce this footprint,
+TL is used from diff. by pretrain models.
+Base Model $\rightarrow$ Pre-trained model $\rightarrow$ Fine-tuned Model
+   $\uparrow$
+Higher in gpu, days & train
+   $\uparrow$
+Local, easy, reproducible

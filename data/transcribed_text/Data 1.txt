@@ -1,0 +1,15 @@
+```
+                                       $b^n = y \Rightarrow \log_b (y) = n$
+
+Notations :
+       (.) $\Rightarrow x^{(i)}$ $\Rightarrow$ $i^{th}$ data
+       [.] $\Rightarrow x^{[l]}$ $\Rightarrow$ $l^{th}$ layer
+       {}  $\Rightarrow x^{[t]}$ $\Rightarrow$ $t^{th}$ batch
+
+CPU/GPU :
+       $CPU \rightarrow$ few ($6h$) powerful cores, good at
+dense reg. tasks.
+       $GPU \rightarrow$ thousands ($1000 - 10000$) of simple
+cores, good at doing same sample math ops
+rows, good at data parallel.
+```

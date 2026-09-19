@@ -1,0 +1,60 @@
+Master - Shifting & Managing water
+A Processes:
+
+1. API Server
+Cluster gateway
+acts an gateway for auth
+Decides on which worker node the new pod should
+create ->
+[Diagram showing N1 (60% used), N2 (30% used), Scheduler box, and arrows]
+
+2. Scheduler
+Resides on worker node the new pod should
+
+3. Controller Manager
+Detects cluster state changes
+If the scheduled pod gets terminated then
+it will inform to scheduler to allocate the node for the
+
+eg:
+- etcd:
+Cluster Brates:
+Updates the cluster changes [unclear] by value
+Loks a DB but for cluster edges.
+New pod creates
+Cluster Healthy?
+How much res avail?
+
+Example Cluster Set Up:
+For testing -> Minikube
+-> 1 master & 1 pod
+-> 3 node RC
+-> Node runs on the vms.
+
+Master process
+[Diagram: API Server connected to pod, pod, Secret, configmap inside Node, with arrows to UI, CLI, API, KUBECTL]
+
+4. Used for create/delete components -
+create/destroy pods.
+create services.
+
+Installation of minikube:
+1. Install hypervisor
+2. minikube.
+
+Then,
+minikube start --vm-driver = hyperv = CMT
+-
+Minikube waste deployment -> --image = nginx
+-
+Deploys waste replicaset
+[unclear] in a cluster is 🡲
+Pod is an abstraction of containers.
+
+Replica set deployment ->
+[unclear]
+By default, there will be an auto-port
+fits with me, my given
+[unclear] over it my --ko/deploy
+
+Raj Mogol

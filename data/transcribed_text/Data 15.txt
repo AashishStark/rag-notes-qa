@@ -1,0 +1,104 @@
+(94)
+
+Field of study - Computer science give ability to learn without explicitly program.
+
+ML algorithms:
+- Supervised learning ->
+predict no. Regression
+Classification
+- Unsupervised learning ->
+is cluster update
+It cluster data
+-> density estimation
+Dimensionality reduction
+- Recommender systems
+- Reinforcement learning
+
+# Supervised learning:
+Linear Regression:
+
+training set $\rightarrow$ learning algorithm $\rightarrow$ [f] model
+
+cost function:
+$f_{w,b}(x) = wx + b$
+
+$J(w,b) = \frac{1}{2m} \sum_{i=1}^{m} (\hat{y}^{(i)} - y^{(i)})^2$
+
+$\uparrow$ AVERAGE $\uparrow$ ERROR
+$2m$ [unclear] $\quad$ FROM DRAWN LINE (LINEAR REGLE).
+[unclear]
+
+Community mud. Net must use.
+
+Goal is to minimize J by altering $w$ and $b$
+
+For using AIM for: how I draw to what $W,b$ alter.
+$\rightarrow$ This graph means say first altering any one of the variable ($w$) or ($b$). Then what it is with $x$ and $y$. And see where it down better - and starts the run.
+
+WA-vavin.
+
+---
+
+Ex: $V = \cdot\hat{i} + \cdot\hat{j}$
+$T(\vec{v}) = (\cdot\hat{i} + \cdot\hat{j}) + 2\cdot\hat{j}$
+
+$T(\vec{v}) = \begin{bmatrix}
+\cdot & \cdot \\
+\cdot & \cdot
+\end{bmatrix} \begin{bmatrix}
+x \\
+y
+\end{bmatrix} = \begin{bmatrix}
+\cdot w_1 + 2x_2 \\
+\cdot y_1 + 2y_2
+\end{bmatrix}$
+
+$\begin{bmatrix}
+\cdot & \cdot \\
+\cdot & \cdot
+\end{bmatrix} \vec{v} = \begin{bmatrix}
+\cdot & \cdot \\
+\cdot & \cdot
+\end{bmatrix} \begin{bmatrix}
+x \\
+y
+\end{bmatrix} = \begin{bmatrix}
+x + \cdot y \\
+\cdot x + y
+\end{bmatrix}$
+
+$2 \times 2$ Matrix
+
+$\begin{bmatrix}
+\cdot & \cdot \\
+\cdot & \cdot
+\end{bmatrix} \begin{matrix}
+3 \\
+3
+\end{matrix}$
+
+$\forall \begin{matrix}
+\hat{i} (1,0) \rightarrow T(\hat{i}) (1,-2) \\
+\hat{j} (0,1) \rightarrow T(\hat{j}) (3,0)
+\end{matrix} \Bigg\}$
+In graph, based on this basis of $T(\hat{i}), \hat{j}$ other points can be calculated.
+
+$\int_c^b \begin{bmatrix}
+\cdot & b \\
+\cdot & d
+\end{bmatrix} \begin{matrix}
+\hat{i} \\
+\hat{j}
+\end{matrix} = \begin{bmatrix}
+\cdot\hat{c} + b\hat{j} \\
+\cdot\hat{d} + \hat{j}
+\end{bmatrix} = \text{Matrix vector multiplication}$
+
+shear: to
+$\begin{matrix}
+\hat{i} \rightarrow \text{fixed} \\
+\hat{j} \rightarrow \hat{i}, \hat{j}
+\end{matrix} \begin{bmatrix}
+\cdot & \cdot \\
+\cdot & \cdot
+\end{bmatrix}$

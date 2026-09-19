@@ -1,0 +1,58 @@
+Container & Orchestration
+
+Containers:
+- packages/encapsulating your app & need to run
+- Code
+- Runtime
+- Dependencies
+- into single portable unit
+- provides faster start time & improved resource efficiency
+Container Orchestration:
+- Manages lifecycle of containers
+  - Starting
+  - stopping
+  - scaling
+  - across clusters
+
+Comparison ECR / EKS:
+
+ECF:
+- Streamlined & Integrated
+- Define some parameters
+- fully managed servers
+
+EKS:
+- Open source platform
+- More complex
+- More control & flexibility
+- ECR: (Elastic Container Registry)
+  Stores container images
+  fully managed Docker registry
+
+Images (pull and push)
+
+ECR -> EKS/ECS -> EC2/ Fargate -> actually run
+
+Fargate (serverless), container hosting platforms
+- offers efficiency & convenience
+
+In Fargate, don't need to worry about oss
+- serverless where oss/hardware are running whereas
+on EC2, you need to do it.
+
+(Fargate -> contrast mode:
+EC2 -> do it yourself)
+
+2.4 Additional Compute Service:
+
+(1) AWS App Runner:
+- Easier to deploy & manage apps in EL2
+  Instead of (EKS, ECR, networking, fargate)
+  - provides env for you based on the config
+  - simplified provisioning
+  - rapidly deploy
+  - scaling & control (if running).
+
+(2) AWS Batch:
+- Designed for heavy duty tasks !!
+- massive datasets, complex calculations.

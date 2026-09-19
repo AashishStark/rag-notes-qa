@@ -1,0 +1,42 @@
+9. Q) Enable Web security (user before dispatcher servlet)
+- [unclear]
+- Dispatcher servlet
+↓
+@RestController
+
+- JWT:
+  - Frontend $\to$ credentials password
+  - [unclear] $\to$ database password
+  - Success Return $\to$ Access response (15 mins),
+  - Refresh Token $\to$ [unclear] fixed 7 days drop
+
+  - Zustand / Redux $\to$ store in 'react' memory
+    - It will re-render will other component
+    - previous input.
+
+  - Zustand / Middleware $\to$ getter Reset & local storage committed
+    - [unclear] Zustand never store so when user is
+      [unclear] Zustand store all state in local storage be
+      - store in MW, returns status in local stage be
+      - fore out give to Zustand -
+        - token [unclear]
+
+  - Retry upon expiry
+    - genre: If $\to$ store all the [unclear] failed api's which
+      result that status obtain token
+      failed but access token less.
+
+  - BLACKLIST TOKEN:
+    - Token are [unclear] logged out
+      token expiry - return until the access
+
+- In local, we save
+  $\to$ [unclear] secret when except
+
+  - UI $\to$ Request $\to$ Verify $\to$ Extract use token
+    - token $\to$ signature password
+    - [unclear] compare we
+      [unclear]
+
+  - Token will @ RestController throw error
+    after completion

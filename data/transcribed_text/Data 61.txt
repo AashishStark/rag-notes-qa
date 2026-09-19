@@ -1,0 +1,63 @@
+Properties:
+- REST never retains for every actions
+  http- session Management (session = session.creation Policy(S.C.P. STATELESS));
+  
+  ```java
+  return new InMemoryUserDetailsManager(
+      User.withDefaultPasswordEncoder()
+      .username("").password("").roles("").build()
+  );
+  ```
+  - Instead of app.prop u can define UN/PWD here
+  - Multiple user will be allowed here
+
+Password Encoder:
+- BCrypt Password Encoder
+
+Jwt JWT:
+- JSON Web Token
+- Not Security but authenticity
+
+Spring JPS:
+- JJWT api
+- JJWT Jackson
+
+Microservices:
+1. Dependency
+2. Scalability
+
+- Challenges:
+  1. Communication b/w services
+
+[Diagram: Microservices grid]
+- Search / jpa
+- Gateway / 80
+- Users / NoSQL
+
+Kubernetes:
+- K8 components:
+  - Node:
+    - [unclear] server - physical machine
+  - Pod:
+    - smallest unit in k8s.
+    - abstraction over container
+    - usually runs 1 appln per pod (but can be run can run multiple containers on 1 pod).
+
+[Diagram: Node containing 2 Pods with IPs]
+- Now IP will be inside container then in pod restart (- - application gets restarted)
+- To overcome this,
+  IP -> Service / Ingress
+
+- for each service, there should be separate DB
+- store in single for microservices
+
+- K8
+- TECHWORLD-WITH-NANA
+- Youtube
+- Manage containerized appln - in diff cloud env.
+- Features:
+  - High availability
+  - Scalability
+  - Disaster recovery
+
+[Diagram: Cluster architecture with nodes, pods, services, ingress, and VIP]

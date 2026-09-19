@@ -1,0 +1,72 @@
+Default Backend
+default backend ingress in N-ingress
+
+default : http : backend : 80
+default rule
+
+Multiple rules for same host
+
+spec:
+  rules:
+    - host: myapp.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: ~
+              servicePort: 8080
+
+Ingress
+
+Multiple subdomains or domains
+
+spec:
+  rules:
+    - host: analytics.hi.com
+      http: {
+    - host: shop.hi.com
+
+want: google.com
+http://google.com
+
+config map [unclear]
+
+spec:
+  - hosts:
+    - - myapp.com
+  - - nameSpaces: no-namespace
+  - - rules:
+    - - host:
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ~ - nest: tls
+  namespace: default <- some in min sort of go to use
+data:
+  tls.crt : base64 encoded crt
+  tls.key: base64 encoded key
+  type: kubernetes.io/tls
+
+HELM - package manager : Reuse the config files (yaml)
+[unclear] version control stored on git as a repo.
+Helm
+  - Tool to package joins files
+  - distribute them [unclear] package/generate joins data ever
+Helm Chart : a folder structure/ nested joint data ever
+structly in gitlab
+Bundle of joins
+  Create own chart with Helm
+  push them to repo
+  Helm
+  download and use with
+
+Library Hcl
+[unclear] [unclear]
+
+Template Engine
+1. Define a common blueprint
+   - define most of the your files [unclear]
+   - familiar data, defining common values domain
+2. Dynamic values replacement by placeholders

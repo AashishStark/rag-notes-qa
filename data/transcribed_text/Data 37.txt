@@ -1,0 +1,67 @@
+5.1) Hybrid cloud:
+on-prem, 1 VPC with a VPN
+gateway
+
+Internet -> VPN -> VPC -> public subnet -> NAT
+[unclear] -> Route 53 -> VPC
+
+Illustrations:
+1. VPN means over the internet - secure subnet - slow throughput.
+2. Direct Connect (DX) -> dedicated connection - expensive.
+To overcome this:
+DC -> Direct Connect -> VPC (VPN backup)
+all network flows should use accelerated private connection:
+
+| VPN | Direct Connect |
+|---|---|
+| secure | high throughput |
+| flexible | low latency |
+| resource heavy | consistent performance |
+| small scale | large data transfers |
+| elasticity not | mission applications |
+
+Use both on failover:
+1- VPN failover -> 2. Direct Connect
+section 5
+
+Proof:
+User -> RS5 -> CFront -> R53 -> region 1
+region 1 -> region 1
+User -> customer -> DC -> origin 1 (VPC)
+on-prem
+
+---
+
+6.1) INTRO
+
+Storage:
+1. Block storage:
+- Data structured into pieces called blocks.
+- fast, less expensive to records.
+- Elastic Block Store (EBS)
+- Managed EBS -> Direct data access without file sys layers.
+- For off workloads -> where fine-grained need to manage
+for data migration.
+- Best: Applications/DBs needs fast, freq updates.
+
+ii. Object storage:
+- Obj: Data + ID + metadata
+- Amazon Simple Storage Service (S3) -> full rewrite right on update object
+- Managed -> Features: Obj can grow-
+- Best: large or fly unchanges files.
+
+iii. File storage:
+- Amazon Elastic File System -> Hierarchical file system shared by
+- Fully-managed -> straight forward scaling without wall steps.
+AWS elasticity stream
+- D-FSC -> Best: Applications needs shared file access.
+- F-managed
+- Best: EFS -> Multi-Location, resiliency ONTAP.
+
+Additional storages:
+1. AWS Storage Gateway:
+Hybrid cloud storage
+-> Bridge between access to cloud storage.
+- AWS Elastic Disaster Recovery
+recovery if pingout, internet,
+rebound scaled server in my.

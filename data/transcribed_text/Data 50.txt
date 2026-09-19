@@ -1,0 +1,59 @@
+Setting up EC2 :-
+(1) Launch
+AMI -> OS, dead software if reqd.
+Instance type -> CPU, memory & n/w perf.
+(2) Connect
+SSH, RDP.
+Any [unclear] (AWS console).
+(3) Use
+Just do whatever
+
+EC2 Instance Types
+- grouped under every family (varying combinations of cpu, memory, n/w, storage)
+- flexibility to optimize for certain types of tasks by choosing one specific to your particular workload.
+- families are
+  - balanced resource
+  - General purpose
+  - Compute optimized - process speed
+  - Memory optimized - data dense/fast da
+  - accelerated computing / Graphics process
+  - storage optimized - H/W acceleration
+
+  - high performance
+  locally stored disks
+
+-> Right [unclear] size
+
+---
+
+Provision AWS Resource
+
+How to access these services available in aws { provision, configure, manage these resources } -> API
+
+- using API
+  - screen [unclear]: set up test env. View costs bill. View monitor.
+  ① AWS Management Console (UI)
+  ② AWS CLI -> [unclear] for automation ready.
+  ③ AWS SDK -> for program lng. (Py - boto3) package
+
+Demo -> EC2 -> Console -> AMI
+
+Home -> EC2 -> Launch Instance
+
+Name
+AMI - Template of OS and built-in apps.
+Inst. type - CPU, RAM.
+Key pair - How to logging [unclear]
+N/W settings - Allow HTTP / S
+Storage
+
+- Vol attached
++ User data
+
+AMI -> provides sys. config, not data backups
+
+select the os/ partition/ IPV4 address
+Any AMI can launch normal EC2 ring
+Use AMI:
+① Custom AMI - apps, config, n/w tailored. Pre-configured drug drop in.
+② Purchase from AWS Marketplace (3rd party).

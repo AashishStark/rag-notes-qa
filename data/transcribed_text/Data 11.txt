@@ -1,0 +1,51 @@
+# checking for convergence:
+- plotting graph iterations against error.
+  (y vs $x$ graph)
+  ($y \rightarrow$ learning curve)
+  ($x \rightarrow$ no. of iterations)
+- No. of iterations determining std way:
+  - automatic: max Iter. + if epsilon
+  - If $\Delta \le \epsilon \rightarrow$ run [unclear]
+- Gradually it's difficult.
+
+# Choosing L.R.:
+- Try with $\alpha$ for same iterations.
+  $\alpha \le 0.001$, $0.01$, $0.1$, $1$
+  Then, choose the [unclear] value.
+
+# Feature Engineering:
+- transforming or scaling original features:
+  - Using $\phi_{i}$ to design new features, [unclear]
+    $m_{1}$, $m_{2}$ $\longrightarrow$ $x_{1}$, $x_{2}$, $x_{3}$ [$x_{2}=m_{1}m_{2}$ meaningful]
+
+# Polynomial Regression:
+- $f(x) = w_{1}x + b$
+- $f(x) = w_{1}x + w_{2}x^{2} + b$
+- $f(x) = w_{1}x + w_{2}x^{2} + w_{3}x^{3} + b$
+- $f(x) = w_{1}x + w_{2}\sqrt{x} + b$
+  Why no $\phi$ change?
+
+---
+
+# Classification:
+Motivation:
+- L.R. $\ne$ Logistic Regression (log r)
+
+## Step 1:
+- 'Everything regression' want is linear, etc.
+- Used for classification.
+- It classifies type $0$ and $1$.
+
+- $z = \vec{w} \cdot \vec{x} + b$
+- $f(x) = g(z) = g(\vec{w} \cdot \vec{x} + b) = \frac{1}{1 + e^{-(\vec{w} \cdot \vec{x} + b)}}$
+- $g(z) = \frac{1}{1 + e^{-z}}$ (sigmoid fn: \%y/p = $0 \rightarrow 1$)
+- $0 \le g(z) \le 1$
+
+## Interpretation of log of $y$:
+- eg: $x \rightarrow$ tumour size
+- $y \rightarrow 0$ (not malig)
+  $1$ (malig)
+- $f(\vec{w}, b) (\vec{x}^{(i)}) = 0.7$
+  mean $\rightarrow$ 70\% chance is $y$ is $1$.
+  $P(y=0) + P(y=1) = 1$.
+- $f(\vec{x}^{(i)}) = 1 \{y=1\} | \vec{x}, \vec{w}, b)$

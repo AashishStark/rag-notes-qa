@@ -1,0 +1,71 @@
+Main services of Any:
+- compute (EC2, Lambda)
+- storage (S3, EBS)
+- Outbound data transfer
+
+11.2) Pricing & Billing features
+1. Spends & Cost Management (Consol. billing)
+- Consolidation all company's
+  accounts under root account
+  which reduces rented base amount
+
+2. AWS Budgets
+- track cost & usage
+- set alerts
+- Tag the resources
+- based on - tag -> we can see vehicle there
+  less vehicle less rate of tags
+
+3. AWS Cost Explorer
+- Resource cost & usage over time
+- Pricing Calculator
+- lets predict exact planning cost
+- Based on given inputs -> generate cost
+
+11.3) Support Plans
+1. Basic support -> no cost
+2. Dev support -> 24 hrs or less
+   12 hrs -> if sys down
+3. Business support -> 4 hrs or less
+   - 1 hr -> sys down
+   - 4 hrs -> prod down
+   - guidance
+4. Enterprise support
+   - 15 min -> biz down - Monitor your own - Support
+   - Ent -> 15 min - Monitor your own - Support
+
+11.5) AWS Marketplace
+- Digital catalog & use to find, test, buy,
+  deploy & manage 3rd party after coming
+  on AWS market.
+- Has it in:
+1. AWS Partner N/W
+   AWS = build solutions & services for
+   customer.
+
+11.6) Cost Opt
+- EBS -> Have ElasticCache, Read-Only Replicas
+  - cost saver
+  Incr horizontally instead
+  of buying new one.
+
+12) MIGRATION
+12.1) INTRO
+Steps:
+i, assess phase :- preparation Evaluation
+ii, Mobilize phase -> Application data source,
+                        migration hub
+iii, Migrate & Modernize :- Appln migration
+                            Service
+
+12.2) Framework
+1. AWS Proj: Service team created
+- 1. supp. cloud adoption framework
+- perspectives (concern mgmt to cloud needed)
+  - Business
+  - People
+  - Governance
+- Platform
+- Security
+- Operations
+- Action Plan -> Plan

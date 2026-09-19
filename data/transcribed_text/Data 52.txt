@@ -1,0 +1,96 @@
+Change namespace by:
+By default, 'default' will be the active namespace.
+In this case, if you run `kubectl` without specifying ns, it will return only 'default' s.
+
+No, ODS want to change this.
+Instead, want to install
+
+`kubens` $\leftarrow$ package
+
+---
+
+Ext Service vs Ingress:
+
+eg. for $\text{UI} \rightarrow$ our data engineer made
+https:// [unclear] / $8174 / 3$
+
+This is only for testing.
+
+---
+
+pod $\leftarrow$ service $\leftarrow$ UI
+
+pod $\leftarrow$ service $\leftarrow$ Ingress $\leftarrow$ browser/external
+$\text{http:} // m.com$
+
+---
+
+yaml for Ingress:
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: -
+spec:
+  rules:
+    - host: myapp.com
+      http:
+        paths:
+          - backend:
+              serviceName: my-ind-ser
+              servicePort: 8080
+```
+
+---
+
+Internal Service
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name:
+spec:
+  selector:
+    app: my-mouse
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+```
+
+---
+
+UI $\rightarrow$ Server $\rightarrow$ Ingress pod $\rightarrow$ [unclear] worker
+
+$\downarrow$ (implicitly creates IP for Ingress !)
+`class rules:`
+
+$\rightarrow$ `add Ingress`
+
+---
+
+pod $\leftarrow$ service $\leftarrow$ Ingress
+
+$\downarrow$
+$\begin{array}{c}
+\text{Ingress} \\
+\text{pod}
+\end{array}$
+
+$\downarrow$
+Ingress Controllor
+- Evaluates all the rules
+- Manage redirection
+
+---
+
+When/Where does Ingress enable Ingress?
+
+By creating ingress rule, K8S automatically assigns only public IP for that service which entirely want to resolve.
+
+Upon ingress assign some IP, we need to resolve
+that IP to the host.
+`path: $\leftarrow$ /etc/hosts`
+`public IP host (space separated)`
+`192.168... $\rightarrow$ m.com`

@@ -1,0 +1,62 @@
+7.c) Additional DBS:
+- Amazon DocumentDB: low-latency on-premises & AWS
+- Amazon Neptune: Social media, whole graph DBs, etc.
+- Amazon Managed Relational Database Service: Create, manage databases w/out worrying about hardware, storage & relational scaling.
+- DynamoDB accelerator (DAX): In-memory cache for [unclear]. Hope this explains.
+
+8.) AWS & ML
+
+8.1) INTRO
+AI: computer capable of human-like tasks
+ML: Type of AI: performs complex tasks without explicit lang.
+
+8.2) AI/ML on AWS
+- AWS AI/ML STACK
+ - AWS AI services
+ - ML services
+ - ML frameworks & [unclear]
+
+8.3) services: (managed services)
+Provide you with pre-made rules & pre-built models that are intensely trained to perform specific lang.
+- if image you're pretty sure is about the speech ->
+- if image uncompleted -> sent to sentiment analysis
+- if image uncompleted -> sent to sentiment document
+
+M2 Services:
+- Amazon SageMaker AI - Build, Train, Deploy
+- Fully managed infra, tools & workflows.
+- Train data, validation data, performance model debugging.
+  uncover all data with ease etc.
+
+---
+
+8.5) AI/ML solution
+- populair ML frameworks
+- Amazon Tier1 (... contd)
+ - Amazon Translate:
+   converts speech or text, text to speech - [unclear], Polly
+ - Amazon Rekognition:
+   Intelligent search, weather, apple
+ - search recognition
+ - Amazon Rekognition
+   video analysis service: identify obj., people, text scenes & activities within image & videos
+ - Amazon Textract:
+   detects & extract text & handwritten details from forms, vendor invoices written doc.
+ - Amazon Lex:
+   build voice & text interfaces to applns.
+   NLU & automatic speech recognition (ASR)
+ - AI create cognitive voices.
+ - Amazon Personalize:
+   Use historical data to build best-
+   - applns.
+
+SageMaker AI
+Train & - ML services
+(train, store, deploy)
+- We don't worry about infra.
+  AI & IDE → simplified access control & transport.
+
+Benefits:
+- Choice of ML tools
+- Fully managed infra
+- Reputable ML workflows

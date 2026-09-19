@@ -1,0 +1,54 @@
+6.5) S3 Storage classes & S3 Lifecycle
+
+Storage classes
+- Designed for different storage needs.
+- Multiple storage classes, single bucket
+
+1. Amazon S3 Standard
+   - Frequently accessed
+   - Fast retrieval = affordable storage costs
+   - Lower storage costs
+
+2. Amazon S3 Standard - Infrequent Access (Infrequent Access)
+   - Infrequent access - Infrequent access
+   - Lower storage costs
+
+3. Amazon S3 Glacier Instant Retrieval
+   - Quickly accessible cost saving
+   - Medical images/media files
+   - Millisecond access/Flexible Retrieval
+
+4. Amazon S3 Glacier Flexible Retrieval
+   - Same cost
+   - Fast retrieval time-to-cost
+   - ranging from mins to hrs.
+
+5. Amazon S3 Glacier Deep Archive
+   - Most cost-effective
+   - Monthly density need.
+   - Compliance archive / digital preservation
+   - Retrieval within (12 hrs.)
+
+One Zone:
+i. S3 Standard-IA
+ii. S3 OneZone-IA
+   - Lower cost
+   - Data loss possible if AZ goes down.
+
+6. Amazon S3 Intelligent Tiering
+   - Can configure rules at start most people can
+   - then move the periods of time at no per
+     down.
+
+7. S3 storage class analysis
+   - Move your data from standard -> Infrequent ->
+     Glacier via rules
+
+---
+
+(6.6) S3 Demo
+
+- Home -> S3 -> Create Bucket
+- Bucket -> Click Create + Create folder
+- Upload -> Properties -> Metadata -> Sign-defined/user-defined
+- Properties -> Permissions -> Block public access -> Bucket policy - JSON (Need to write policy) -> Request

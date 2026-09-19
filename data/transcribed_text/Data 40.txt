@@ -1,0 +1,69 @@
+# Batch (contd.)
+- Infra weight
+- Parallel processing overhead
+- data routing
+
+3) **Amazon Lightsail:** (Virtual private servers)
+   - simple, predictable, low, a/c
+   - Web app on having [unclear].
+
+## SMALL
+- Simplicity
+- trade-off solutions:
+  - Marginal region
+  - AWS Outposts family (C/C-appliance)
+- Hybrid cloud focus
+  - Connected zone
+  - low latency + data residency
+  - Idry for hybrid deployments.
+
+4) **Getting Global**
+
+4.1) **Intro**
+
+Edge location:
+- fast, localized caching of most [unclear], assumed region
+- cache 5 images / video / other items to reduce latency
+  from central location.
+- How to choose Region?
+  - Customer demand, Dos cost ([unclear])
+
+**IoT & Visual formation**
+
+4.2) **choosing An Region**
+1. **Compliance** - Official state permission / state change
+   away to the region.
+2. **Proximity** - Region where the customer really resides
+   - for best latency
+3. **Feature availability** - Not all services avail in all regions.
+4. **Pricing** - for some service, based on region pricing.
+
+---
+
+4.3) Multi AZ - for high availability & data will be
+- Disaster recovery, clustering [unclear] - region-migration
+- Improved Business continuity
+- lower latency
+- Compliance
+
+if **Amazon CloudFront**
+- Content delivery n/w
+  - cache content as near as possible
+  - User edge locations which are part of
+    Amazon Global Edge n/w.
+- Edge locations are separate from regions, and
+  designated for only content serving cache.
+  It also dont store [unclear].
+- If dus content cache
+  if amazon Route 53 $\to$ DNS (URL $\to$ IP).
+
+4.4) **Infra & Automation**
+- IAE (Infrastructure as code)
+  - Infra as code
+  - IaC + Infra as code
+  - Infra in file - like ansible file (BLUEPRINT)
+  - Infra in formation + IaC ansible
+    create that resource does not exist (cf
+    template
+    - Only what not here - (res is missing)
+    same wash can me multiple regions

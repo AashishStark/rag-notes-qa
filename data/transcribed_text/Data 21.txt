@@ -1,0 +1,54 @@
+### Printing arrays
+- `reshape(4,3)` $\rightarrow$ 1st array
+- `reshape(2,3,4)` $\rightarrow$ 3rd array
+  $\lfloor \begin{matrix} 3 \times 4 \\ \text{ 2 arrays} \end{matrix}$
+- `np.set_printoptions(threshold=sys.maxsize)`
+  $\downarrow$
+  to print everything instead of
+  $[:] \quad [...]$
+- `"*"` $\rightarrow$ Elementwise product
+  - `a.sum (axis=0)` $\rightarrow$ sum of each column
+  - `a.sum (axis = 1)` $\rightarrow$ sum of each row
+  - `a.sum (axis = -1)` $\rightarrow$ sum of C.F. along each row
+
+### Array functions
+- `np.empty(9)`
+- `np.ones((9)) $\rightarrow$ 1`
+- `np.zeros((9,4))`
+
+### Indexing, Slicing & Iterating
+- `a[2]`
+- `a[52:5]`
+- `a[1:4:2] = 1000`
+
+### Multi-D:
+```python
+def f(x,y):
+  return x+y
+```
+- `np.fromfunction(f, (5,4), dtype = np.int)`
+
+---
+
+```python
+a = [[1, 2, 3],
+     [10, 11, 13]]
+```
+- `a[1:0, :]`
+- `a[:, 1:0, :]`
+  - `[... 1 0 :]` $\rightarrow$ Specify single element
+- `print(a)`
+- `a.ravel()` $\rightarrow$ returns array, flattened
+- `a.result()`
+- `a.shape` $\rightarrow$ `(n, m)` $\leftrightarrow$ `(m, n)`
+- `a.reshape(2,3)`
+- `a.reshape(3,2)` $\leftarrow$ If `-1`, then other dim
+  $\lfloor$ `A.reshape(3,-1)` $\rightarrow$ cols are auto calculated
+
+#### Stack /
+- Vertical
+  - `np.vstack((a,b))`
+- Horizontal
+  - `np.hstack((a,b))`
+- `np.column_stack((a,b))`
+- `np.hsplit(a, 3)` $\rightarrow$ 3 in a row

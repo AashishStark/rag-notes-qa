@@ -1,0 +1,55 @@
+p. AWS IAM Identity Center
+centralized IAM across AWS
+- fundamental Identity Mgmt & access across multiple accounts, applications or domains
+- one place way to manage users, api keys
+1. AWS Secret Manager
+- centralized view of secrets across all accounts, api keys
+regions.
+
+9.3, 9/10 and Application protection (AWS)
+- Distributed Denial of Service
+  - AWS Security Standard / Advanced
+    - granular control of traffic
+    - attaches to endpoint, traffic
+  - AWS Protection level / features
+    - Regional Security groups -> DNS, p/s level. Only allow proper
+      ELB -> shadow traffic.
+    - AWS Reporting & capacity of Region under DDoS evolution
+  - AWS Protection "Std" version
+  - AWS Firewall
+    - stateful & most common / big types of DDoS.
+    - Advanced & protects detailed diagnosis to detect & mitigate DDoS attacks.
+  - AWS WAF
+    - Web application firewall
+    - Monitor web req -> IP -> ACL rules.
+
+Encryption + Identity data only current guardrails
+- Rest + Data in transit (secured in p/s)
+- 1. User AWS Key Mgmt Service (KMS):
+  - Create & manage cryptographic keys
+  - key never leaves KMS.
+
+- protection on TLS -> certificate, userport control
+2. AWS Certificate Manager
+- provision, manage & deploy SSL/TLS certificates.
+- Built-in list of protection:
+  - Amazon S3
+  - Amazon RDS
+  - Amazon DynamoDB.
+- sits on traffic route with reqs.
+- uses MF & automation.
+
+9.5, Protection & Responding to security incidents
+1. Amazon Inspector - EC2, ECR, Lambda
+- Runs continuous security assessments.
+- 7 finds security best practices deviations.
+- Detects damaged EC2 instances.
+- Finds vulnerable software installations.
+
+2. Amazon Guard Duty - Inputs, logs
+- Continuous monitoring
+- AI/ML powered threat detection.
+3. Amazon Detective - Investigation
+- Simplified, reality investigations.
+- Enhanced threat investigations.
+- Gen-AI powered insights.

@@ -1,0 +1,352 @@
+[
+  {
+    "index": 1,
+    "category": "Direct Factual (AWS)",
+    "question": "What is AWS EBS (Elastic Block Store) and what are its primary use cases according to the notes?",
+    "in_corpus": true,
+    "expected_answer_summary": "EBS is a block storage system formatted as a series of bytes stored in disk clusters. It acts as a persistent virtual hard drive attached to an EC2 instance to store the OS, configuration, and data. Primary use cases include relational databases (RDBMS), enterprise applications, and file systems.",
+    "generated_answer": "Based on the provided notes (Source #1: Data 36.txt), **EBS (Elastic Block Store)** is an EBS system that uses block storage, formatted as a series of bytes stored in clusters on disks. It acts as a persistent virtual hard drive that can be attached to an EC2 instance.\n\nIts **primary use cases** include:\n* RDBMS (Relational Database Management Systems)\n* Enterprise applications\n* File systems\n* Storing OS, type, and configuration",
+    "anti_hallucination_check": null,
+    "sources_used": [
+      {
+        "source_file": "Data 36.txt",
+        "chunk_index": 0,
+        "topic_heading": "6.2) EBS [unclear]",
+        "distance": 0.5684
+      },
+      {
+        "source_file": "Data 32.txt",
+        "chunk_index": 0,
+        "topic_heading": "6.7) EFS",
+        "distance": 0.7979
+      },
+      {
+        "source_file": "Data 37.txt",
+        "chunk_index": 1,
+        "topic_heading": "Additional storages",
+        "distance": 0.8727
+      },
+      {
+        "source_file": "Data 27.txt",
+        "chunk_index": 0,
+        "topic_heading": "1. AWS Secret Manager",
+        "distance": 0.976
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "category": "Direct Factual (Deep Learning)",
+    "question": "How does Dropout Regularization work during training, and how is it handled at test time?",
+    "in_corpus": true,
+    "expected_answer_summary": "During training, dropout randomly drops a percentage of neurons in layers using a keep probability (e.g., keep_prob = 0.8) and scales remaining activations (dividing by keep_prob) to maintain expected matrix values. At test time, no neurons are dropped so the full network is used without modification.",
+    "generated_answer": "Based on the provided notes (Source #1: Data 2.txt), here is how Dropout Regularization works and how it is handled at test time:\n\n**How Dropout Regularization works during training:**\n* It is an alternative to $L_2$ regularization ($\\|W\\|_F^2$) that randomly drops some number of neurons in the layers (e.g., randomly setting values to $0$).\n* For a given layer (for example, layer $l = 3$ with a `keep_prob` of $0.8$), the process is as follows:\n  1. Generate a random matrix $d3$ using `np.random.rand(a3.shape[0], a3.shape[1])`.\n  2. Compare $d3$ to the `keep_prob` ($d3 = d3 < \\text{keep_prob}$).\n  3. Multiply by `keep_prob` ($0.8$).\n  4. Perform element-wise multiplication with the activation matrix: $a3 = \\text{np.multiply}(a3, d3)$.\n  5. Scale the matrix back up to keep the matrix values the same by dividing by `keep_prob` ($a3 / = \\text{keep_prob}$), which reduces the values by $20\\%$ when $l = 0.8$.\n\n**How it is handled at test time:**\n* At test time, you multiply the prediction and there is **no need to dropout**.",
+    "anti_hallucination_check": null,
+    "sources_used": [
+      {
+        "source_file": "Data 2.txt",
+        "chunk_index": 0,
+        "topic_heading": "Gradient",
+        "distance": 0.9348
+      },
+      {
+        "source_file": "Data 14.txt",
+        "chunk_index": 0,
+        "topic_heading": "Problem of overfitting",
+        "distance": 1.351
+      },
+      {
+        "source_file": "Data 64.txt",
+        "chunk_index": 0,
+        "topic_heading": "Training",
+        "distance": 1.413
+      },
+      {
+        "source_file": "Data 8.txt",
+        "chunk_index": 0,
+        "topic_heading": "K-Means Clustering",
+        "distance": 1.4284
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "category": "Direct Factual (Spring Security)",
+    "question": "Why does Spring Security enforce CSRF protection on POST and DELETE HTTP requests, and how is the token handled?",
+    "in_corpus": true,
+    "expected_answer_summary": "Without CSRF protection, state-changing requests like POST and DELETE that rely on cookies or parameters can be attacked and forged by malicious websites. Spring Security defends against this by requiring an anti-CSRF token (such as X-CSRF-TOKEN in the request header) for verification on each request.",
+    "generated_answer": "Based on your study notes, here is why Spring Security enforces CSRF protection on POST and DELETE requests and how the token is handled:\n\n* **Why it is needed:** Requests using only parameters can be easily attacked by malicious users because they are not sent securely over a period of time (like an expiration). Malicious sites in browsers can trigger unauthentic requests when a user inputs data on cookies. To avoid this for POST and DELETE calls, a query cost / token is needed for each call/request (Data 60.txt).\n* **How the token is handled:** \n  * Anti-CSRF tokens are sent for every HTTP request to prevent CSRF attacks (Data 20.txt).\n  * For POST calls, you need to include the token in the header as `x-CSRF-TOKEN` (Data 60.txt).\n  * In the code, tokens are handled in security, and a method can be defined to get the CSRF token from the `HttpServletRequest` attribute (Data 60.txt).",
+    "anti_hallucination_check": null,
+    "sources_used": [
+      {
+        "source_file": "Data 20.txt",
+        "chunk_index": 0,
+        "topic_heading": "Web Security",
+        "distance": 0.6865
+      },
+      {
+        "source_file": "Data 60.txt",
+        "chunk_index": 0,
+        "topic_heading": "{Spring Boot}",
+        "distance": 0.7658
+      },
+      {
+        "source_file": "Data 19.txt",
+        "chunk_index": 0,
+        "topic_heading": "9. Q) Enable Web security (user before dispatcher servlet)",
+        "distance": 1.2127
+      },
+      {
+        "source_file": "Data 61.txt",
+        "chunk_index": 0,
+        "topic_heading": "Properties",
+        "distance": 1.2435
+      }
+    ]
+  },
+  {
+    "index": 4,
+    "category": "Direct Factual (ML Algorithms)",
+    "question": "Why is the standard squared error cost function from Linear Regression not used for Logistic Regression?",
+    "in_corpus": true,
+    "expected_answer_summary": "Applying the squared error cost function to logistic regression produces a non-convex surface with many local minima, which makes gradient descent fail to find the global optimum. Logistic regression uses the logistic loss function (cross-entropy) to ensure convexity.",
+    "generated_answer": "Based on the provided notes (Source #1: Data 10.txt), the standard squared error cost function from Linear Regression is not used for Logistic Regression because if it is applied, \"it will not give convex and will have lot of local minima, which is not a good approach.\"",
+    "anti_hallucination_check": null,
+    "sources_used": [
+      {
+        "source_file": "Data 10.txt",
+        "chunk_index": 0,
+        "topic_heading": "Decision Boundary",
+        "distance": 1.2716
+      },
+      {
+        "source_file": "Data 15.txt",
+        "chunk_index": 0,
+        "topic_heading": "ML algorithms",
+        "distance": 1.4717
+      },
+      {
+        "source_file": "Data 2.txt",
+        "chunk_index": 0,
+        "topic_heading": "Gradient",
+        "distance": 1.568
+      },
+      {
+        "source_file": "Data 34.txt",
+        "chunk_index": 0,
+        "topic_heading": "BatchNorm at test time",
+        "distance": 1.5937
+      }
+    ]
+  },
+  {
+    "index": 5,
+    "category": "Combining Points (AWS Networking & Security)",
+    "question": "What are the key differences between AWS Security Groups and Network Access Control Lists (NACLs) regarding statefulness and default rules?",
+    "in_corpus": true,
+    "expected_answer_summary": "Security Groups are stateful (return traffic is automatically allowed regardless of inbound rules), deny all inbound traffic by default while allowing all outbound traffic, and evaluate all rules before deciding. NACLs are stateless (return traffic must be explicitly allowed) and operate at the subnet/VPC level.",
+    "generated_answer": "Based on the student's study notes (Source #3: Data 41.txt), the key differences between AWS Security Groups and Network Access Control Lists (NACLs) regarding statefulness and default rules are:\n\n* **Security Group:**\n  * **Stateful:** Return traffic is automatically allowed.\n  * **Default Rules:** Deny all inbound by default + Allow all outbound (10/4 rules).\n\n* **NACL (Network Access Control List):**\n  * **Stateless:** Return traffic is allowed manually.",
+    "anti_hallucination_check": null,
+    "sources_used": [
+      {
+        "source_file": "Data 27.txt",
+        "chunk_index": 0,
+        "topic_heading": "1. AWS Secret Manager",
+        "distance": 0.8943
+      },
+      {
+        "source_file": "Data 28.txt",
+        "chunk_index": 0,
+        "topic_heading": "Authentication",
+        "distance": 0.9208
+      },
+      {
+        "source_file": "Data 41.txt",
+        "chunk_index": 0,
+        "topic_heading": "Summary of Security Group & NACL",
+        "distance": 0.939
+      },
+      {
+        "source_file": "Data 29.txt",
+        "chunk_index": 0,
+        "topic_heading": "9. AWS Audit Manager",
+        "distance": 0.9544
+      }
+    ]
+  },
+  {
+    "index": 6,
+    "category": "Combining Points (AWS Storage & Lifecycle)",
+    "question": "How do EBS snapshots interact with Amazon S3, and what lifecycle management practices are used for backups?",
+    "in_corpus": true,
+    "expected_answer_summary": "EBS snapshots are point-in-time volume backups stored redundantly in Amazon S3 for durable, cost-effective data protection and recovery. Lifecycle management involves automating snapshot schedules (daily/weekly), applying consistent tagging policies, and setting retention rules to manage backups over time.",
+    "generated_answer": "Based on the provided study notes:\n\n**Interaction between EBS snapshots and Amazon S3:**\n* Backup plans involving EBS snapshots are stored in S3 (Source #1: Data 36.txt).\n\n**Lifecycle management practices used for backups:**\n* Backup plans can be created as daily or weekly backups and stored in S3 (Source #1: Data 36.txt).\n* Management practices include defining policies to automate the snapshot lifecycle, scheduling automatic snapshot creation, setting retention policies, and applying consistent tagging policies (Source #1: Data 36.txt).",
+    "anti_hallucination_check": null,
+    "sources_used": [
+      {
+        "source_file": "Data 36.txt",
+        "chunk_index": 0,
+        "topic_heading": "6.2) EBS [unclear]",
+        "distance": 0.5838
+      },
+      {
+        "source_file": "Data 38.txt",
+        "chunk_index": 0,
+        "topic_heading": "One Zone",
+        "distance": 0.9227
+      },
+      {
+        "source_file": "Data 35.txt",
+        "chunk_index": 0,
+        "topic_heading": "6.5) S3 Storage classes & S3 Lifecycle",
+        "distance": 0.9293
+      },
+      {
+        "source_file": "Data 37.txt",
+        "chunk_index": 1,
+        "topic_heading": "Additional storages",
+        "distance": 1.1052
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "category": "Combining Points (Spring Security & Web)",
+    "question": "How do CORS and CSRF differ in web application security according to the notes?",
+    "in_corpus": true,
+    "expected_answer_summary": "CORS (Cross-Origin Resource Sharing) relaxes browser cross-origin restrictions to allow specific frontend origins (like port 3000) to communicate with backend APIs (like port 8080). CSRF (Cross-Site Request Forgery) is an exploit where malicious websites trigger unauthorized requests using stored cookies, prevented by issuing and checking anti-CSRF tokens.",
+    "generated_answer": "Based on the provided notes, CORS and CSRF differ in the following ways:\n\n* **CORS (Cross-Origin Resource Sharing):**\n  - Deals with who is allowed to access data from [unclear] and relaxes the security rule for production (Source #1).\n  - Involves front-end IP (e.g., 3000) and back-end IP (e.g., 8080, which must be known to the back-end) (Source #1).\n  - Checks an array of origins, allowing access if the result is true and denying it otherwise (Source #1).\n\n* **CSRF (Cross-Site Request Forgery):**\n  - Can attack without [unclear] using malicious sites in the browser that trigger unauthentic requests when a user applies input on cookies (Source #1).\n  - To prevent this, Anti-CSRF tokens are sent for every HTTP request (Source #1). For POST and DELETE calls, queries/tokens need to be included in the header (e.g., `x-CSRF-TOKEN`) (Sources #1 and #2).",
+    "anti_hallucination_check": null,
+    "sources_used": [
+      {
+        "source_file": "Data 20.txt",
+        "chunk_index": 0,
+        "topic_heading": "Web Security",
+        "distance": 0.8134
+      },
+      {
+        "source_file": "Data 60.txt",
+        "chunk_index": 0,
+        "topic_heading": "{Spring Boot}",
+        "distance": 1.2508
+      },
+      {
+        "source_file": "Data 19.txt",
+        "chunk_index": 0,
+        "topic_heading": "9. Q) Enable Web security (user before dispatcher servlet)",
+        "distance": 1.3322
+      },
+      {
+        "source_file": "Data 47.txt",
+        "chunk_index": 0,
+        "topic_heading": "Resp",
+        "distance": 1.4956
+      }
+    ]
+  },
+  {
+    "index": 8,
+    "category": "Combining Points (ML/DL Optimization)",
+    "question": "What methods are described in the notes to address and reduce overfitting in machine learning models?",
+    "in_corpus": true,
+    "expected_answer_summary": "The notes describe several techniques to reduce overfitting: 1) Regularization (L2 regularization and Dropout to spread weights), 2) Early stopping (halting training before validation error rises), 3) Data augmentation (modifying training images via rotations, cropping, flipping, and color jittering), and 4) Feature reduction.",
+    "generated_answer": "Based on the provided notes, the methods described to address and reduce overfitting are:\n\n1. **Collect more training data** (Source #1: Data 14.txt)\n2. **Reduce features (reduce polynomial degree)** (Source #1: Data 14.txt)\n3. **Regularization**, which takes the concept of reducing features, but instead of fully removing them, reduces the weight of those features to bring down their impact on the graphs (Source #1: Data 14.txt and Source #3: Data 6.txt).",
+    "anti_hallucination_check": null,
+    "sources_used": [
+      {
+        "source_file": "Data 14.txt",
+        "chunk_index": 0,
+        "topic_heading": "Problem of overfitting",
+        "distance": 0.9945
+      },
+      {
+        "source_file": "Data 64.txt",
+        "chunk_index": 0,
+        "topic_heading": "Training",
+        "distance": 1.1952
+      },
+      {
+        "source_file": "Data 6.txt",
+        "chunk_index": 0,
+        "topic_heading": "Bias / Variance",
+        "distance": 1.2329
+      },
+      {
+        "source_file": "Data 11.txt",
+        "chunk_index": 0,
+        "topic_heading": "checking for convergence",
+        "distance": 1.2454
+      }
+    ]
+  },
+  {
+    "index": 9,
+    "category": "Hallucination Test (Negative - AWS)",
+    "question": "How does Amazon DynamoDB resolve multi-region write conflicts across Global Tables using vector clocks in the notes?",
+    "in_corpus": false,
+    "expected_answer_summary": "I don't know based on my notes. The notes mention DynamoDB and DAX accelerator, but do not contain information about DynamoDB Global Tables, multi-region conflict resolution, or vector clocks.",
+    "generated_answer": "I don't know based on my notes.",
+    "anti_hallucination_check": true,
+    "sources_used": [
+      {
+        "source_file": "Data 31.txt",
+        "chunk_index": 0,
+        "topic_heading": "<3) NoSQL DB",
+        "distance": 1.1763
+      },
+      {
+        "source_file": "Data 40.txt",
+        "chunk_index": 0,
+        "topic_heading": "Batch (contd.)",
+        "distance": 1.1787
+      },
+      {
+        "source_file": "Data 25.txt",
+        "chunk_index": 0,
+        "topic_heading": "9. design applications to scale [unclear] to whatever",
+        "distance": 1.1995
+      },
+      {
+        "source_file": "Data 30.txt",
+        "chunk_index": 0,
+        "topic_heading": "7.c) Additional DBS",
+        "distance": 1.2197
+      }
+    ]
+  },
+  {
+    "index": 10,
+    "category": "Hallucination Test (Negative - DL / LLMs)",
+    "question": "What rank dimension and alpha scaling factor are recommended in the notes for fine-tuning LLMs with LoRA (Low-Rank Adaptation)?",
+    "in_corpus": false,
+    "expected_answer_summary": "I don't know based on my notes. While the notes touch on deep learning, neural networks, and transformers, they do not mention LoRA (Low-Rank Adaptation), rank decomposition, or alpha scaling hyper-parameters.",
+    "generated_answer": "I don't know based on my notes.",
+    "anti_hallucination_check": true,
+    "sources_used": [
+      {
+        "source_file": "Data 35.txt",
+        "chunk_index": 0,
+        "topic_heading": "6.5) S3 Storage classes & S3 Lifecycle",
+        "distance": 1.4858
+      },
+      {
+        "source_file": "Data 36.txt",
+        "chunk_index": 0,
+        "topic_heading": "6.2) EBS [unclear]",
+        "distance": 1.5348
+      },
+      {
+        "source_file": "Data 2.txt",
+        "chunk_index": 0,
+        "topic_heading": "Gradient",
+        "distance": 1.5423
+      },
+      {
+        "source_file": "Data 37.txt",
+        "chunk_index": 1,
+        "topic_heading": "Additional storages",
+        "distance": 1.547
+      }
+    ]
+  }
+]

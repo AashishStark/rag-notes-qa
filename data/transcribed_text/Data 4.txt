@@ -1,0 +1,36 @@
+# Deep L-layer NN
+
+$L = H$ ($H$ layers)
+$n^{[l]}$ = # unit in layer $l$ (nodes in $l$ layer)
+$a^{[l]}$ = activation in layer $l$
+$$a^{[l]} = g(z^{[l]})$$
+$W^{[l]}$ = weights for $z^{[l]}$
+
+### forward prop in DN:
+$$z^{[l]} = W^{[l]} a^{[l-1]} + b^{[l]}$$
+$$a^{[l]} = g\left(z^{[l]}\right) = g\left(W^{[l]} a^{[l-1]} + b^{[l]}\right)$$
+$$\Rightarrow$$
+$$z^{[l]} = w^{[l]} a^{[l-1]} + b^{[l]}$$
+$$a^{[l]} = g^{[l]} \left(z^{[l]}\right)$$
+
+---
+
+### Matrix format:
+
+$$z^{[l]} = w^{[l]} x^{[l]} + b^{[l]}$$
+$$\Rightarrow \quad (n^{[l]}, 1) = (n^{[l]}, n^{[l-1]}) (n^{[l-1]}, 1) + (n^{[l]}, 1)$$
+
+$$\Rightarrow \quad (3,1) = (3, 2) (2, 1) + (3, 1)$$
+$$\Rightarrow \quad (3, 1) = \left(n^{[l]}, n^{[l-1]}\right) \left(n^{[l-1]}, 1\right) + (3, 1)$$
+$$W^{[l]} = \left(n^{[l]}, n^{[l-1]}\right)$$
+
+### For single neuron:
+$$Z^{[l]} = w^{[l]} a^{[l-1]} + b^{[l]}$$
+$$d W^{[l]} = \left(n^{[l]}, n^{[l-1]}\right)$$
+$$d b^{[l]} = \left(n^{[l]}, 1\right)$$
+
+$$a^{[l]} = g^{[l]} \left(z^{[l]}\right) \Rightarrow \left(n^{[l]}, 1\right)$$
+
+### For w/ recards:
+$l$ are replaced with $m$ for all
+$$\text{eqn instead of } l \text{ alone when it resulling size}$$

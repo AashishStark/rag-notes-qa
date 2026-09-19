@@ -1,0 +1,35 @@
+Rate Decay:
+
+$$\alpha = \frac{\alpha_0}{1 + \text{decay rate} \times \text{Epoch No.}}$$
+$\alpha \rightarrow$ gradually reduce $\alpha$.
+Why? At begin, $\alpha$ takes large steps. $\rightarrow$ First when training should be taken faster and when, the solution point come $\downarrow$ can made smaller $\alpha$, so that it can easily converge.
+If $\alpha$ is constant $\longrightarrow$ [unclear] over shoot $\alpha$ smaller.
+
+Other formulas:
+* $\alpha = 0.95^{\text{Epoch No.}} \times \alpha_0$ as $\text{Exp decay}$
+* $\alpha = \frac{k}{\sqrt{\text{variable}}}$ or $\frac{k}{\sqrt{\alpha_0}}$
+
+Local Optimum:
+In real world scenarios clean other local optimum will not be a optimum. They, most of the data run like saddle.
+
+_Point the gradient in saddle $-$ problem_
+$\alpha$
+
+_For local minimums in not $-$ problem_
+- [unclear] $\alpha$ is not local optima.
+$\uparrow$ $\alpha$ (large) can made jump now $-$
+
+Hyperparameter Tuning:
+
+Hyperparameters:
+- $\alpha$
+- $\beta \leftarrow \text{momentum no.}$
+- $\beta_1, \beta_2, \varepsilon \leftarrow$ Adam $(0.9, 0.999, 10^{-8})$
+- $\text{# layers}$
+- $\text{# hidden units}$
+- $\text{learning rate decay}$
+- $\text{Mini-batch size}$
+
+Batch Norm:
+(already studied about weight [unclear])
+For specially $y = f(wx_i)$ in $\text{DL}$ some time $\text{hidden}$ layer acts as input for the next layer, whatever that can be non-useful to train the model faster $\rightarrow$ yes.

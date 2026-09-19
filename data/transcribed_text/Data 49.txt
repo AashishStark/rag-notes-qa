@@ -1,0 +1,57 @@
+Local to remote vol. Type:
+Local vol type volumes used req. for data persistence.
+For eg. one my remote cluster
+- pod
+ - pvc
+- pv
+
+Stateful Sets:
+Deployment:
+- stateless -> using deployment (n num of replica)
+- Stateful -> using statefulset [unclear] -> but on
+ - can't be created / deleted
+ - can't be randomly ordered -> [unclear] order wrong,
+ -> wait for previous status in deployment
+
+Pod Identity:
+predicting identity for each pod.
+- IA-0
+- IA-1
+- IA-2
+- created from same template, must not interchangeable
+- persistent storage never any re-scheduling.
+
+Cluster IP, replica:
+- If new replica get added, it doesn't take random [unclear]
+- Replica data from with spec one don't take random!
+- Data will lost when all pods die!
+- [unclear] / persistent volumes not used.
+
+Replica/ID
+Creation:
+- created only when the previous pod in running.
+Deletion:
+- Delete from last pod to n-1 etc.
+
+2) Pod Endpoints:
+- predictable pod names
+- fixed persistent disc name
+- when pod restarts
+ - IP address [unclear]
+ - same & endpoints stay same
+ - retains state / node
+  - [pod name]-[0..n-1]-[replicas, domain]
+
+Services:
+Why?
+- Each pod has its own IP address, Data from
+- To scale IP.
+ - stable IP address
+ - [unclear]
+  - load balancing
+  - does comply (can directly connect with IP)
+  - with & without cluster.
+
+Types:
+1) Cluster IP
+- default / head service.

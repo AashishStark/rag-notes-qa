@@ -1,0 +1,73 @@
+5.1) NETWORKING
+
+5.1) VPC AWS
+- Amazon Virtual Private Cloud (VPC)
+- Provision a logically isolated section of AWS Cloud.
+- public/private VMS.
+- launch AWS resources public / private subnet & organize resources / subnets.
+- VPC placed in AZ subnet.
+- VPC & VPN may have direct connection VPN
+- hardware connection
+
+Internet Gateway
+- Gateway open to public.
+- Any Direct Connect:
+  - From on-premises to AWS. (communication)
+  - latency sensitive
+  - security, reliable
+  - large heats data
+  - migration
+  - high speed VPC
+    - Direct Connect (physical wire)
+
+Benefits VPC:
+- Increase security
+- Save time
+- control over it.
+
+Diagram:
+Client - Internet
+Internet Gateway
+VPC
+Subnet
+EC2 Instance
+AWS Cloud
+Amazon VPC
+
+Virtual Private Gateway
+- protected traffic to enter VPC
+
+---
+
+5.6) CONNECT TO AWS CLOUD
+1) AWS Client VPN
+- Connect remote workers & on-prem VPN to cloud.
+- fully managed service
+- connection to IO water center & AWS cloud res.
+
+2) AWS Site-to-Site VPN
+- Connection to IO water center & AWS
+- No need of instant gateway.
+
+Intermediary Services
+- AWS Transit Gateway
+  - connect VPC & on-prem [unclear] HUB.
+- NAT Gateway
+  - VPC subnet routes -> non-public
+  - External access -> don't allow very
+    access out.
+
+3) VPC Peering Connection
+- privately connect 2 VPCs on your own VPC.
+- No need of instant gateway.
+
+5.4) INSIDE VPC (Security)
+Firewall - control traffic permission
+- Passes one way from subnet, 2 way packet
+  that means that packet travels goes checked against
+  without ACL (Access Control List)
+- In same subnet - consecutive EC2 instances - [unclear]
+- when package to go - consecutive EC2 instances - subnet dig.
+- Security group - Instance level N/W security
+- Both security group has security group which by default it will not
+  allow anything & communicate from outside.

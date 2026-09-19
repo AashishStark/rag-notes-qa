@@ -1,0 +1,52 @@
+# Linear Algebra
+
+## Vector:
+- A arrow rooted into on my plane with its tail at $(0, 0)$.
+- Coordinates $\rightarrow$ Origin $\rightarrow$ Root of all vectors. $(0,0) \rightarrow$ [unclear].
+
+---
+
+- The above show geometrically $\times$ meaning [unclear]
+
+- Addition:
+  $\begin{bmatrix} x_1 \\ y_1 \end{bmatrix} + \begin{bmatrix} x_2 \\ y_2 \end{bmatrix} = \begin{bmatrix} x_1 + x_2 \\ y_1 + y_2 \end{bmatrix}$
+
+---
+
+## Scalar Multiplication:
+- Scaling $\rightarrow$ stretching or shrinking or reversing the direction of vectors.
+- $2 \begin{bmatrix} 3 \\ 1 \end{bmatrix} \rightarrow 2 \begin{bmatrix} 1 \\ 1 \\ 1 \\ 1 \end{bmatrix} \rightarrow \begin{bmatrix} 6 \\ 2 \end{bmatrix}$
+
+---
+
+## Linear Transformations:
+- $\begin{bmatrix} i & j \end{bmatrix} \rightarrow \text{scalar} \rightarrow \text{unit value of } i, \text{ and } j$
+- $\left[\begin{array}{cc} i_{out} & j_{out} \end{array}\right] \rightarrow \text{vector} \rightarrow$
+- $3\hat{i} \rightarrow \text{stretching } 3 \text{ times along } \hat{i}$ scaled value...
+- $\hat{i} \text{ and } \hat{j} \rightarrow \text{Pairs of coordinate system} (\text{Basis vector})$
+- $a\vec{v} + b\vec{w} \rightarrow \text{Linear combination of vectors}$
+- Features: $\downarrow$ [unclear]
+  - They, if we pick out of the vector $v$, keep each other in the room, it will always provide in line (Vector).
+
+---
+
+## Span:
+
+- Normal:
+  - Two at same dir $\rightarrow$ (Linearly dependent)
+  - Origin $\rightarrow$ [unclear]
+
+- A vector $\rightarrow$ arrows.
+- Collection vectors $\rightarrow$ Path $\rightarrow$ (Easy to imagine).
+- $3\text{D} \rightarrow a\vec{v} + b\vec{w} + c\vec{w}$ (Linear combination).
+- Pair of vector:
+  - set of linearly independent vectors that span at free space.
+
+---
+
+## Matrices:
+
+- Linear Transformations:
+  - $f(\vec{v}) \rightarrow \hat{i}, \hat{j}$
+  - Function $\rightarrow$ Input $\rightarrow (\vec{v}) \rightarrow$ Output $\rightarrow$ Vector
+  - $\uparrow \rightarrow$ space line parallel and symmetry spacing [unclear].

@@ -1,0 +1,48 @@
+Why deep representation:
+- You can consider layers, starting very low then try identifying core pattern from lower layers. It next layer in shallow networks and gives you a next layer can mean gradually product etc.
+
+eg: 1) facial recognition:
+- 1) Edges
+- 2) Parts of the face (nose, ear)
+- 3) Face in diff angles (left, right, bottom)
+- 4) 2 a single face
+
+2) audio & text Recog:
+- audio $\to$ low level $\to$ phonemes $\to$ words $\to$ sentences / grammar
+  audio  P C A T
+  segmentation
+
+- Deep Networks $\gg$ Shallow Networks
+  (like XOR operators)
+  here it reqs exp change
+  no of children layer $\to$
+  [unclear] are same level
+  $\Rightarrow O(2^n)$
+
+---
+
+$\vec{y} \Rightarrow \vec{y}_i$:
+
+layer $l$
+$a^{[l-1]} \to$
+$$\begin{array}{|c|}
+\hline
+W^{[l]}, b^{[l]} \\
+\hline
+\end{array}$$
+$\to a^{[l]}$
+
+$$\left[ \text{ (combine } W x z^{[l]} \right] \to dz^{[l]} \to dw^{[l]}, db^{[l]}$$
+
+Backward pass:
+- If $\to dz^{[l]} = da^{[l]} \circ g^{[l]\prime}(z^{[l]})$
+- $\therefore dW^{[l]}, db^{[l]}$
+
+$$dz^{[l]} = da^{[l]} * g^{[l]\prime}(z^{[l]})$$
+$$dW^{[l]} = dz^{[l]} a^{[l-1]T}$$
+$$db^{[l]} = dz^{[l]}$$
+$$da^{[l-1]} = W^{[l]T} dz^{[l]}$$
+
+$$dz^{[l]} = \Sigma_{l} \left[ W^{[l+1]T} * g^{[l+1]\prime}(z^{[l+1]}) \right]$$
+
+$X \to Relu \to Relu' \to Sigmoid \to l'$

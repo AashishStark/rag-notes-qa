@@ -1,0 +1,75 @@
+6.2) EBS [unclear]
+- EBS (Elastic Block Store)
+- EBS system uses block storage
+- formatted as series of bytes that are stored in clusters on disks
+- used for RDBMS, enterprise app, file system
+- Inst. volume -> disk storage data on it
+- Inst. allow volumes -> attached within its host.
+
+Persistent:
+- Virtual hard drive that can attach a EC2.
+- Used to store OS, type, config.
+
+[unclear]:
+- Procs: I/O per second + performance
+- Benefits:
+  - Data migration
+  - Inst. type changes
+  - Disk recovery
+  - Perf. tuning
+
+6.3) DATA Lifecycle (EBS)
+- Customer responsibility
+  - Manage:
+    - Pass/De-pass
+
+- EBS Snapshots
+  - Backup plans (daily/weekly) stored in S3
+  - Wait on server backups & restore them as needed
+  - Used on the system content.
+- Benefits: Data protection, recovery,
+  operational flexibility
+  cost effective.
+
+---
+
+[unclear] Management:
+- Define policies to automate snapshot lifecycle
+- Schedule automatic snapshot creation
+- Set retention policies
+- Apply consistent tagging policies
+
+6.4) Storage on S3
+Managed Service:
+- Store & retain unlimited amount of data
+- Store objects in buckets (stored data).
+- Max size of obj: 5 TB
+- Create enterprise buckets
+- Version objects
+- 11 9s of data durability
+- Redundant to 3 places (not same zone when obj. stored)
+
+Used for:
+- Website hosting
+- storing backups
+- archiving data
+- managing media files
+
+Version on S3 security:
+- Private access by default
+- public access can occur
+- bucket policies
+- Identity based only
+- Encryption
+
+- Only also created can access.
+- Bucket policies
+- _Only also created can access._
+- bucket policies:
+  - public access can occur
+  - _Only also created can access._
+
+- (Version S3 version policy) -> only read only for limited (public read only for limited static access)
+- _Without updating is switched_
+- S3 versioning
+- version S3 audit logs

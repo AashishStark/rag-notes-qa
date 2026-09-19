@@ -1,0 +1,61 @@
+- It tries to scale automatically, are
+  simple to configure to use
+- SNS : publisher - subscriber
+  - a channel for msgs to be delivered
+  - If a msg/response needs right now write [unclear]
+  - Eventbridge:
+    - serverless service connect diff parts of app
+      using events, supply & ingest real-time event data by
+      Route events from sources like apps, AWS service
+      & other options.
+    - Order placed or payment completed.
+      - parallel process
+    - [unclear] event & process it, as soon as news
+      available.
+
+3) COMPUTING COMAPUTE SERVICES
+1) INTRO TO SERVERLESS COMPUTING
+- Run apps without managing infrastructure
+- AWS Lambda
+- Auto handler scaling, availability,
+  maintenance.
+Managed Services
+- Pros: loss of managing infra.
+- Not as customizable as unmanaged service
+  but it gives lot of time and effort.
+- Eg: SQS, SNS, [unclear]
+Functions
+- You could actually run or process this underlying
+  infra.
+
+Fully - managed services :
+- like serverless over
+- Eliminates the need of provision or
+  manage any servers at all.
+AWS Lambda -> Function as a Service (FaaS)
+- Function compute service that runs code
+  without managing servers.
+  - Max duration of code for is 15 mins
+  - pay for quicks [unclear] event-driven processes
+  - It can integrate with other services easily
+  - Charged only for compute time [unclear]
+  - Handles execution, scaling & resource allocation
+
+3) DEMO - SQS, LAMBDA, CLOUDWATCH
+   [unclear]
+   SQS -> [unclear] -> LAMBDA -> CLOUDWATCH
+     (permission policy)
+  - Flow -> SQS -----------------------> Lambda -------------------> S3 [unclear]
+           create SQS                       (can be seen in          SQS trigger
+           send message                      top of the diary)       SQS queue
+           Message Body                     Blueprint                create fn
+                                            node 18.x
+                                            Blueprint
+                                            func name
+                                            Execution Role
+                                            (is SQS pollers putting compute
+  Lambda - Monitor - log groups - streams
+  Runtimes:
+           -> Node.js
+           -> Java
+           -> Py.

@@ -1,0 +1,87 @@
+```markdown
+# Template file
+kind: Pod
+metadata:
+  name: {{ values.name }}
+spec:
+  containers:
+  - name: {{ values.containers.name }}
+    image: {{ values.containers.image }}
+    port: 
+      - port: {{ values.containers.port }}
+
+values.yaml
+```yaml
+name: my-app
+containers:
+  name: my-app
+  image: ~
+  port: 9001
+```
+```
+
+--- | --- set flag
+
+## Use case:
+for apples version diff ovr.s
+
+## Helm Chart Struct:
+mychart/
+  Chart.yaml
+  values.yaml
+  templates/
+
+Values injection into template files
+values.yaml
+```yaml
+image_name: ~
+port: ~
+version: 1.0.0
+```
+
+templates.yaml
+```yaml
+imageName: {{ values.imageName }}
+port: ~
+version: 2.0.0
+```
+
+---
+
+## Release Mgmt:
+`helm install --values = my-values.yaml <chart-name>`
+
+- To maintain track of chart ex.
+- Things are appiled to exis dep instead of creating new one.
+- Howley collosity
+- Tiller (Server) Client
+- Tiller (Server) Stores every deployment history off [unclear] here.
+
+## Drawbacks of Tiller:
+1. Too much power over k8 cluster
+2. security issue
+
+## To overcome this:
+
+## K8 Volume:
+To persist data in KUBE
+1. persistent volume
+2. persistent volume claim
+3. storage class
+
+### Storage req:
+1. storage should not depends on pod lifecycles
+2. storage must avail on all nodes
+3. storage need to remain even if cluster crashes
+
+### How to create
+- cluster resources
+- PV is create
+
+Bind Persistent Volume
+spec capacity:
+  storage: 5Gi
+  Volume Mode: FileSystem
+  accessMode:
+    - ReadWrite Once
+```
