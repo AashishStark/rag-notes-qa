@@ -73,22 +73,33 @@ export GOOGLE_API_KEY="your-key-here"
 ## Usage
 
 ```bash
-# 1. Transcribe handwritten notes
-python src/preprocess.py
+# 1. Transcribe handwritten notes (Dataset/My Studies → data/transcribed_text/)
+python transcribe_notes.py
 
-# 2. Chunk the transcribed text
-python src/chunk.py
+# 2. Chunk the transcribed text → data/chunks.json
+python chunk_notes.py
 
-# 3. Build the vector index
-python src/build_index.py
+# 3. Build the vector index + ask questions (indexes on first run, then interactive CLI)
+python rag_pipeline.py
 
-# 4. Ask questions
-python src/rag.py
+# Or ask a single question directly:
+python rag_pipeline.py --query "What is EBS used for?"
+
+# Rebuild the index from scratch if chunks.json changed:
+python rag_pipeline.py --rebuild-db
 ```
 
 ## Evaluation
 
-`src/evaluate.py` runs a fixed set of test questions (`data/eval_set.json`) through the pipeline and prints generated answers alongside expected answers, to manually check retrieval quality and catch hallucinations — including questions with no answer in the notes, to confirm the system says so rather than guessing.
+```bash
+# Generate the evaluation question set (if not already created)
+python generate_eval_set.py
+
+# Run the eval set through the pipeline → data/eval_results.json
+python evaluate_rag.py
+```
+
+evaluate_rag.py runs a fixed set of test questions (data/eval_set.json) through the pipeline and saves generated answers alongside expected answers to data/eval_results.json, to manually check retrieval quality and catch hallucinations — including questions with no answer in the notes, to confirm the system says so rather than guessing.
 
 ## Status
 
